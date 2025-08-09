@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Program Kreativitas Mahasiswa 2025 - Wujudkan Ide Kreatifmu!">
+    <meta name="keywords" content="PKM, Program Kreativitas Mahasiswa, PIMNAS, mahasiswa, inovasi, kreativitas">
+    <meta name="author" content="Erik Wijaya - 20211002064 - DKV Universitas Esa Unggul">
+    <meta name="whatsapp" content="083890514361">
+    <meta name="email" content="wijayaerick289@student.esaunggul.ac.id">
+    <title>PKM UEU 2025</title>
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeInUp: 'fadeInUp 1s ease-out both',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tangerine:wght@400;700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+
+        @keyframes popup {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    
+        .animate-popup {
+            animation: popup ease-out forwards;
+        }
+
+        .logo-bar {
+           animation: popup ease-out forwards;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white">
+    
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/20 backdrop-blur-md shadow-md relative overflow-hidden">
+        <!-- Background Image dengan opacity -->
+        <div class="absolute inset-0 bg-[url('../assets/images/bg-navbar.png')] bg-cover bg-center opacity-15 pointer-events-none"></div>
+
+        <!-- Konten navbar -->
+        <div class="relative z-10 max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+            <div class="flex items-center">
+                <img src="../assets/images/logo.png" alt="Logo" class="w-[80px] h-[80px] mr-2" />
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium text-lg text-[#0556AF] bg-white rounded-full shadow-lg px-4 py-1">
+                <a href="index.html" class="hover:font-bold active">Beranda</a>
+                <a href="profile.html" class="hover:font-bold">Profil Organisasi</a>
+                <a href="about.html" class="hover:font-bold">Tentang PKM</a>
+                <a href="berita.html" class="hover:font-bold">Berita</a>
+                <a href="galeri.html" class="hover:font-bold">Galeri</a>
+                <a href="daftar-pengajuan.html" class="hover:font-bold">Pengajuan Usulan</a>
+            </nav>
+            
+            <!-- Button Login -->
+            <div class="hidden md:flex space-x-3">
+                <button class="text-lg text-[#0556AF] bg-white font-medium rounded-full shadow-lg hover:font-bold px-4 py-1" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" class="md:hidden z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden text-lg bg-white/90 font-medium backdrop-blur px-4 pb-4">
+            <a href="index.html" class="block hover:text-[#0556AF] py-2">Beranda</a>
+            <a href="profile.html" class="block hover:text-[#0556AF] py-2">Profil Organisasi</a>
+            <a href="about.html" class="block hover:text-[#0556AF] py-2">Tentang PKM</a>
+            <a href="berita.html" class="block hover:text-[#0556AF] py-2">Berita</a>
+            <a href="galeri.html" class="block hover:text-[#0556AF] py-2">Galeri</a>
+            <a href="daftar-pengajuan.html" class="block hover:text-[#0556AF] py-2">Pengajuan Usulan</a>
+            <div class="mt-4 space-y-2">
+                <button class="w-full bg-[#0556AF] px-4 py-2 rounded-full text-white font-semibold" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="relative bg-[#FFBA00] py-16 mt-[-102px]">
+        <!-- Background Image with Opacity 15% -->
+        <div class="absolute inset-0 bg-[url('../assets/images/bg-about.png')] bg-cover bg-center opacity-15 z-0"></div>
+
+        <!-- Overlay Content -->
+        <div class="relative max-w-6xl mx-auto px-4 mt-[50px] mb-[50px] z-10">
+            <!-- Content Card -->
+            <div class="rounded-3xl bg-white p-8 md:pl-12 md:pr-12 shadow-lg">
+
+                <!-- Logo Bar -->
+                <div class="flex flex-wrap justify-center items-center gap-6 mb-8">
+                    <img src="../assets/images/Aset Logo/LOGO PKM UEU.png" alt="PKM Center" class="h-12 md:h-16 logo-bar" style="animation-delay: 0s; animation-duration: 0.5s; opacity: 0;">
+                    <img src="../assets/images/Aset Logo/Logo ueu.png" alt="Esa Unggul" class="h-12 md:h-32 logo-bar" style="animation-delay: 0.1s; animation-duration: 0.5s; opacity: 0;">
+                    <img src="../assets/images/Aset Logo/Logo-UEU ban pt.png" alt="Esa Unggul" class="h-12 md:h-16 logo-bar" style="animation-delay: 0.1s; animation-duration: 0.5s; opacity: 0;">
+                    <img src="../assets/images/Aset Logo/Logo Kemdiktisaintek RI Warna.png" alt="Kemdikbud" class="h-12 md:h-16 logo-bar" style="animation-delay: 0.2s; animation-duration: 0.5s; opacity: 0;">
+                    <img src="../assets/images/Aset Logo/Logo PKM-Black.png" alt="PKM" class="h-12 md:h-24 logo-bar" style="animation-delay: 0.3s; animation-duration: 0.5s; opacity: 0;">
+                    <img src="../assets/images/Aset Logo/Logo Belmawa Bersinergi - Warna.png" alt="Belmawa" class="h-12 md:h-24 logo-bar" style="animation-delay: 0.4s; animation-duration: 0.5s; opacity: 0;">
+                    <img src="../assets/images/Aset Logo/Logo Diktisaintek Berdampak_Horizontal Logo.png" alt="Dikti BerDampak" class="h-12 md:h-12 logo-bar" style="animation-delay: 0.5s; animation-duration: 0.5s; opacity: 0;">
+                    <img src="../assets/images/Aset Logo/Logo Simbelmawa.png" alt="Simbelmawa" class="h-12 md:h-24 logo-bar" style="animation-delay: 0.6s; animation-duration: 0.5s; opacity: 0;">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Grid 1: Text -->
+                    <div>
+                        <h2 id="text-about" class="text-3xl md:text-6xl font-bold text-[#0556AF] mb-4 leading-snug animate-popup" style="animation-delay: 0.5s; animation-duration: 0.5s; opacity: 0;">
+                            Wujudkan Ide Kreatifmu di Program Kreativitas Mahasiswa 2025!
+                            Tempat mahasiswa berkarya, berinovasi, dan menuju PIMNAS
+                        </h2>
+                    </div>
+
+                    <!-- Grid 2: Image -->
+                    <div id="img-about" class="text-center animate-popup" style="animation-delay: 1s; animation-duration: 0.5s; opacity: 0;">
+                        <img src="../assets/images/about.png" alt="Tentang PKM" class="w-full max-w-sm mx-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Kreativitas Mahasiswa Section -->
+    <section id="program-kreativitas" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Program Kreativitas Mahasiswa</h2>
+            <p class="text-lg md:text-xl font-medium text-justify mb-8">
+                Program Kreativitas Mahasiswa (PKM) adalah program yang digagas oleh Direktorat Jenderal Pendidikan Tinggi, Riset, dan Teknologi sebagai wadah yang disediakan untuk mahasiswa dalam mengembangkan kreativitas, inovasi, dan potensi ilmiah melalui kegiatan penelitian, pengabdian kepada masyarakat, kewirausahaan, teknologi, dan karya ilmiah. PKM bertujuan mendorong mahasiswa untuk menghasilkan ide orisinal, menyusun proposal secara sistematis, serta mengaplikasikan ilmu pengetahuan dalam situasi nyata. Melalui PKM, mahasiswa tidak hanya diasah kemampuan akademiknya, tetapi juga dilatih soft skills seperti kepemimpinan, kerjasama tim, dan kepekaan sosial, sehingga siap menjadi generasi muda yang inovatif, produktif, dan berdaya saing tinggi di tingkat nasional maupun internasional.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 bg-[#0556AF] rounded-3xl shadow-md gap-0">
+                <div class="text-justify p-6">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-white mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Visi</h3>
+                    <p class="text-lg md:text-xl font-medium text-white">
+                        Mewujudkan Program Kreativitas Mahasiswa sebagai wadah pengembangan generasi muda yang inovatif, berintegritas, dan berkontribusi nyata dalam menciptakan solusi kreatif untuk kemajuan bangsa.
+                    </p>
+                </div>
+                <div class="text-justify p-6">
+                    <h3 class="text-3xl lg:text-4xl font-bold text-white mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Misi</h3>
+                    <ol class="list-decimal text-lg md:text-xl font-medium text-white ml-6 space-y-2">
+                        <li>
+                            Menumbuhkan semangat kreativitas, inovasi, dan jiwa kepemimpinan mahasiswa melalui program yang terstruktur dan berkelanjutan.
+                        </li>
+                        <li>
+                            Meningkatkan kualitas proposal, karya ilmiah, dan produk mahasiswa agar mampu bersaing di tingkat nasional dan internasional.
+                        </li>
+                        <li>
+                            Membangun budaya kolaborasi antara mahasiswa, dosen, dan masyarakat dalam pengembangan solusi kreatif berbasis ilmu pengetahuan dan teknologi.
+                        </li>
+                        <li>
+                            Memberikan pendampingan, pelatihan, dan fasilitas yang mendorong mahasiswa aktif berpartisipasi dalam Program Kreativitas Mahasiswa.
+                        </li>
+                        <li>
+                            Mendorong lahirnya karya inovatif yang berdampak sosial dan relevan dengan kebutuhan masyarakat.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tujuan Program Kreativitas Mahasiswa Section -->
+    <section id="tujuan-pkm" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Tujuan Program Kreativitas Mahasiswa</h2>
+            <p class="text-lg md:text-xl text-justify font-medium mb-8">
+                PKM secara umum bertujuan untuk mempersiapkan sumber daya mahasiswa yang berorientasi ke masa depan dan ditempa dengan transformasi pendidikan tinggi sehingga menjadi lulusan yang unggul, kompetitif, adaptif, fleksibel, produktif, berdaya saing dengan karakter Pancasila, serta memandu mahasiswa menjadi pribadi yang:
+                <ol class="list-decimal text-lg md:text-xl font-medium ml-6 mt-[-20px] space-y-2">
+                    <li>Tahu dan taat aturan;</li>
+                    <li>Kreatif dan inovatif;</li>
+                    <li>Objektif dan kooperatif dalam membangun keragaman intelektual.</li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+    <!-- Manfaat Mengikuti PKM Section -->
+    <section id="manfaat-pkm" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Manfaat Mengikuti Program Kreativitas Mahasiswa</h2>
+            <p class="text-lg md:text-xl text-justify font-medium mb-8">
+                Mengikuti Program Kreativitas Mahasiswa (PKM) bukan hanya tentang lomba, tapi juga tentang pengembangan diri, pengalaman berharga, dan membangun masa depan. Berikut adalah manfaat yang akan kamu dapatkan:
+                <ol class="list-decimal text-lg md:text-xl font-medium ml-6 mt-[-20px] space-y-2">
+                    <li>
+                        Mengasah kreativitas dan inovasi
+                    </li>
+                    <li>
+                        Meningkatkan kemampuan berpikir kritis dan problem solving
+                    </li>
+                    <li>
+                        Pengalaman kompetisi hingga tingkat nasional (PIMNAS)
+                    </li>
+                    <li>
+                        Belajar menyusun proposal dan karya ilmiah
+                    </li>
+                    <li>
+                        Melatih soft skills dalam kerjasama tim, komunikasi, dan kepemimpinan
+                    </li>
+                    <li>
+                        Kesempatan memperoleh pendanaan dari Dikti atau Universitas
+                    </li>
+                    <li>
+                        Meningkatkan portofolio dan daya saing di dunia kerja
+                    </li>
+                    <li>
+                        Memberikan kontribusi nyata bagi masyarakat dan lingkungan
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+    <!-- Jenis-Jenis PKM Section -->
+    <section id="jenis-pkm" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Jenis-Jenis Program Kreativitas Mahasiswa</h2>
+            <p class="text-lg md:text-xl text-justify mb-8">
+                <ol class="list-decimal text-lg md:text-xl font-medium ml-6 mt-[-20px] space-y-2">
+                    <li onclick="scrollToIdWithOffset('#pkm-re')" class="cursor-pointer">
+                        PKM Riset Eksakta (PKM-RE)
+                    </li>
+                    <li onclick="scrollToIdWithOffset('#pkm-rsh')" class="cursor-pointer">
+                        PKM Riset Sosial Humaniora (PKM-RSH)
+                    </li>
+                    <li onclick="scrollToIdWithOffset('#pkm-k')" class="cursor-pointer">
+                        PKM Kewirausahaan (PKM-K)
+                    </li>
+                    <li onclick="scrollToIdWithOffset('#pkm-pm')" class="cursor-pointer">
+                        PKM Pengabdian Kepada Masyarakat (PKM-PM)
+                    </li>
+                    <li onclick="scrollToIdWithOffset('#pkm-pi')" class="cursor-pointer">
+                        PKM Penerapan Iptek (PKM-PI)
+                    </li>
+                    <li onclick="scrollToIdWithOffset('#pkm-kc')" class="cursor-pointer">
+                        PKM Karsa Cipta (PKM-KC)
+                    </li>
+                    <li onclick="scrollToIdWithOffset('#pkm-ki')" class="cursor-pointer">
+                        PKM Karya Inovatif (PKM-KI)
+                    </li>
+                    <li onclick="scrollToIdWithOffset('#pkm-ki')" class="cursor-pointer">
+                        PKM Video Gagasan Konstruktif (PKM-VGK)
+                    </li>
+                    <li onclick="scrollToIdWithOffset('#pkm-ki')" class="cursor-pointer">
+                        PKM Gagasan Futuristik Tertulis (PKM-GFT)
+                    </li>
+                    <li onclick="scrollToIdWithOffset('#pkm-ki')" class="cursor-pointer">
+                        PKM Artikel Ilmiah (PKM-AI)
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+    <!-- Panduan Umum Pelaksanaan PKM Section -->
+    <section id="panduan-pkm" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Panduan Umum Pelaksanaan Program Kreativitas Mahasiswa</h2>
+            <p class="text-lg md:text-xl text-justify font-medium mb-8">
+                Panduan Umum PKM adalah dokumen resmi yang memuat ketentuan dasar terkait penyelenggaraan Program Kreativitas Mahasiswa di seluruh perguruan tinggi Indonesia. Panduan ini menjadi acuan utama dalam:
+                <ol class="list-decimal text-lg md:text-xl font-medium ml-6 mt-[-20px] space-y-2 mb-4">
+                    <li>
+                        Tata cara pengusulan proposal PKM
+                    </li>
+                    <li>
+                        Ketentuan administrasi dan teknis proposal
+                    </li>
+                    <li>
+                        Proses seleksi di tingkat universitas maupun nasional
+                    </li>
+                    <li>
+                        Mekanisme pelaksanaan kegiatan PKM
+                    </li>
+                    <li>
+                        Tahapan monitoring, evaluasi, hingga pelaporan
+                    </li>
+                    <li>
+                        Prosedur menuju Pekan Ilmiah Mahasiswa Nasional (PIMNAS)
+                    </li>
+                </ol>
+                <div class="text-lg md:text-xl text-justify font-medium">
+                    <span class="font-bold">Catatan:</span> Mahasiswa wajib memahami isi Panduan Umum PKM sebelum mengajukan proposal agar proposal memenuhi standar nasional.
+                </div>
+            </p>
+            <div class="mt-8">
+                <a href="https://drive.google.com/file/d/18CvN0LjfNWdyUIQ6hLHEuqUpBTrK3Jk6/view" target="_blank" class="inline-block bg-[#FFBA00] text-gray-800 font-semibold px-6 py-2 rounded-xl hover:bg-[#0556AF] hover:text-white transition">
+                    <img src="../assets/images/aset Icon/file PDF-01.svg" alt="icon PDF" class="inline-block mr-2" style="width: 24px; height: 24px;">
+                    Unduh Panduan Umum PKM 2025
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panduan Perbidang PKM Section -->
+    <section id="panduan-perbidang" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Panduan Perbidang Program Kreativitas Mahasiswa</h2>
+            <p class="text-lg md:text-xl text-justify font-medium mb-8">
+                Selain Panduan Umum, setiap skema atau bidang PKM memiliki pedoman teknis masing-masing yang memuat aturan, format proposal, dan kriteria khusus sesuai jenis kegiatan. Berikut adalah daftar Panduan Perbidang PKM yang dapat diunduh:
+            </p>
+
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-white border-collapse border border-white">
+                    <thead class="text-xs md:text-lg text-center uppercase bg-[#123C7A]">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 border border-gray-300">
+                                No
+                            </th>
+                            <th scope="col" class="px-6 py-3 border border-gray-300 whitespace-nowrap">
+                                Jenis PKM
+                            </th>
+                            <th scope="col" class="px-6 py-3 border border-gray-300 whitespace-nowrap">
+                                Penjelasan Umum
+                            </th>
+                            <th scope="col" class="px-6 py-3 border border-gray-300">
+                                Panduan
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-xs md:text-lg">
+                        <tr id="pkm-re" class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-4 border border-gray-300">
+                                1
+                            </th>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap uppercase">
+                                PKM-RE
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300">
+                                PKM-RE bertujuan untuk melatih mahasiswa dalam mengungkap hubungan sebab-akibat, aksi-reaksi, rancang bangun, eksplorasi, materi alternatif, desain produk atraktif, rancangan dasar dan sejenisnya atau identifikasi senyawa kimia aktif.
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap">
+                                <a href="https://drive.google.com/file/d/1Qn1cyIFpl1Q4KFmBIV-Ttp_ZcRnbIrll/view" target="_blank" class="hover:underline">Unduh Panduan</a>
+                            </td>
+                        </tr>
+                        <tr id="pkm-rsh" class="bg-[#0556AF] border border-white">
+                            <th scope="row" class="px-6 py-4 border border-gray-300">
+                                2
+                            </th>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap uppercase">
+                                PKM-RSH
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300">
+                                PKM-RSH bertujuan untuk melatih mahasiswa dalam mengungkap hubungan sebab-akibat, penelitian deskriptif tentang perilaku sosial, ekonomi, pendidikan, seni dan budaya masyarakat baik terkait dengan kearifan lokal maupun perilaku kontemporer.
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap">
+                                <a href="https://drive.google.com/file/d/1f6isjjNicxzwjYf_QhvkbtbgxScxivN7/view" target="_blank" class="hover:underline">Unduh Panduan</a>
+                            </td>
+                        </tr>
+                        <tr id="pkm-k" class="bg-[#0556AF] border border-white">
+                            <th scope="row" class="px-6 py-4 border border-gray-300">
+                                3
+                            </th>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap uppercase">
+                                PKM-K
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300">
+                                PKM-K bertujuan untuk menumbuhkan pemahaman dan keterampilan mahasiswa dalam menghasilkan komoditas unik serta merintis kewirausahaan yang berorientasi pada laba. Unsur utama yang ditetapkan adalah tingkat intelektual dan kreativitasnya. Pelaku utama adalah mahasiswa, sementara pihak lainnya hanya sebagai faktor pendukung.
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap">
+                                <a href="https://drive.google.com/file/d/1ufefdHaDl7yhCW4W5pKvyCZl62rOFAIR/view" target="_blank" class="hover:underline">Unduh Panduan</a>
+                            </td>
+                        </tr>
+                        <tr id="pkm-pm" class="bg-[#0556AF] border border-white">
+                            <th scope="row" class="px-6 py-4 border border-gray-300">
+                                4
+                            </th>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap uppercase">
+                                PKM-PM
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300">
+                                PKM-PM bertujuan untuk menumbuhkan empati mahasiswa kepada persoalan yang dihadapi masyarakat melalui penerapan iptek yang menjadi solusi tepat bagi persoalan atau kebutuhan masyarakat yang tidak berorientasi pada laba.
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap">
+                                <a href="https://drive.google.com/file/d/17P5jjdfzu0JdwLDTzfxJOgiyxNPiN6Fx/view" target="_blank" class="hover:underline">Unduh Panduan</a>
+                            </td>
+                        </tr>
+                        <tr id="pkm-pi" class="bg-[#0556AF] border border-white">
+                            <th scope="row" class="px-6 py-4 border border-gray-300">
+                                5
+                            </th>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap uppercase">
+                                PKM-PI
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300">
+                                PKM-PI bertujuan untuk membuka wawasan iptek mahasiswa terhadap persoalan yang dihadapi dunia usaha (usaha mikro sampai perusahaan besar) atau masyarakat yang berorientasi pada laba. Implementasi solusi iptek harus merupakan respon persoalan prioritas yang disampaikan mitra.
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap">
+                                <a href="https://drive.google.com/file/d/1Pseh-Ft49zrzkdIraBlh4qB3HMyS_0WP/view" target="_blank" class="hover:underline">Unduh Panduan</a>
+                            </td>
+                        </tr>
+                        <tr id="pkm-kc" class="bg-[#0556AF] border border-white">
+                            <th scope="row" class="px-6 py-4 border border-gray-300">
+                                6
+                            </th>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap uppercase">
+                                PKM-KC
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300">
+                                PKM-KC bertujuan membentuk kemampuan mahasiswa mengkreasikan sesuatu yang baru dan fungsional atas dasar karsa dan nalarnya. Karya cipta tersebut bisa saja belum memberikan kemanfaatan langsung bagi pihak lain. PKM-KC tidak meniru produk yang sudah ada baik di dalam maupun luar negeri, kecuali memodifikasi prinsip dan/atau fungsinya.
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap">
+                                <a href="https://drive.google.com/file/d/11fZZcLak0fpSIpj0F3jUhjRD-WiAmOXE/view" target="_blank" class="hover:underline">Unduh Panduan</a>
+                            </td>
+                        </tr>
+                        <tr id="pkm-ki" class="bg-[#0556AF] border border-white">
+                            <th scope="row" class="px-6 py-4 border border-gray-300">
+                                7
+                            </th>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap uppercase">
+                                PKM-KI
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300">
+                                PKM-KI bertujuan untuk menumbuhkan kepekaan mahasiswa terhadap problematika faktual di masyarakat atau dunia usaha, dan sekaligus mengasah kreativitas mahasiswa untuk menghasilkan karya fungsional inovatif yang solutif berbasis iptek. Luaran utama berupa produk skala penuh (skala 1:1), jadi bukan merupakan prototipe.
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap">
+                                <a href="https://drive.google.com/file/d/1368tmdiu1x452NyTpRFZv39GOOwcaXf-/view" target="_blank" class="hover:underline">Unduh Panduan</a>
+                            </td>
+                        </tr>
+                        <tr id="pkm-vgk" class="bg-[#0556AF] border border-white">
+                            <th scope="row" class="px-6 py-4 border border-gray-300">
+                                8
+                            </th>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap uppercase">
+                                PKM-VGK
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300">
+                                PKM-VGK bertujuan untuk memotivasi partisipasi mahasiswa dalam mengelola imajinasi, persepsi dan nalar, memikirkan tata kelola yang konstruktif sebagai upaya pencapaian tujuan Asta Cita di Indonesia maupun solusi keprihatinan bangsa Indonesia.
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap">
+                                <a href="https://drive.google.com/file/d/1RTGZtZFOY-nEwwLdsq5COVvB1PpyAAle/view" target="_blank" class="hover:underline">Unduh Panduan</a>
+                            </td>
+                        </tr>
+                        <tr id="pkm-gft" class="bg-[#0556AF] border border-white">
+                            <th scope="row" class="px-6 py-4 border border-gray-300">
+                                9
+                            </th>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap uppercase">
+                                PKM-GFT
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300">
+                                PKM-GFT bertujuan untuk meningkatkan daya imajinasi mahasiswa dalam merespon tantangan zaman, umumnya berupa konsep perubahan dan/atau pengembangan dari berbagai aspek berbangsa, bersifat futuristik, jangka panjang, tetapi berpotensi untuk direalisasikan.
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap">
+                                <a href="https://drive.google.com/file/d/1RTGZtZFOY-nEwwLdsq5COVvB1PpyAAle/view" target="_blank" class="hover:underline">Unduh Panduan</a>
+                            </td>
+                        </tr>
+                        <tr id="pkm-ai" class="bg-[#0556AF] border border-white">
+                            <th scope="row" class="px-6 py-4 border border-gray-300">
+                                10
+                            </th>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap uppercase">
+                                PKM-AI
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300">
+                                PKM-AI bertujuan untuk memberi pengalaman mahasiswa menghasilkan karya tulis ilmiah. Bidang ini merupakan program penulisan artikel ilmiah yang bersumber dari hasil kegiatan akademik lainnya dalam bidang pendidikan, penelitian, atau pengabdian kepada masyarakat (misalnya studi kasus, praktik lapangan, KKN, PKM pendanaan yang tidak lolos PIMNAS, magang, dan lain-lain) yang merupakan hasil kerja kelompok.
+                            </td>
+                            <td class="px-6 py-4 border border-gray-300 whitespace-nowrap">
+                                <a href="https://drive.google.com/file/d/1Jljer0jcD9CNv5Sz0AlwqfvnvornA3u5/view" target="_blank" class="hover:underline">Unduh Panduan</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="text-lg md:text-xl text-center font-bold mb-4">
+                    Ingin Tahu Lebih Jauh Tentang PKM?<br>
+                    Unduh Panduan dan Mulai Persiapkan Proposalmu Sekarang!
+                </p>
+                <a href="https://drive.google.com/drive/folders/1AXHuE7H2qkEfe-mzkjVvUZSll6WPKhpl" target="_blank" class="inline-block bg-[#FFBA00] text-gray-800 font-semibold px-6 py-2 rounded-xl hover:bg-[#0556AF] hover:text-white transition">
+                    <img src="../assets/images/aset Icon/file PDF-01.svg" alt="icon PDF" class="inline-block mr-2" style="width: 24px; height: 24px;">
+                    Lihat Semua Panduan
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tahapan PKM Section -->
+    <section id="tahapan-pkm" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Tahapan Program Kreativitas Mahasiswa</h2>
+            <img src="../assets/images/Tahapan PKM.drawio.png" alt="tahapan pkm" class="w-full max-w-7xl mx-auto mb-8">
+
+            <!-- Button "Pelajari lebih lanjut" -->
+            <div class="text-center mt-10">
+                <button onclick="scrollToIdWithOffset('#panduan-pkm')" class="inline-block bg-white text-[#0556AF] border border-[#0556AF] hover:bg-[#0556AF] hover:text-white transition font-semibold px-6 py-2 rounded-full">
+                    Pelajari lebih lanjut &gt;
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0556AF] text-white py-10">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Judul Tengah -->
+            <div class="text-center mb-8">
+                <h2 class="font-bold text-2xl md:text-3xl uppercase">
+                    PKM CENTER UNIVERSITAS ESA UNGGUL
+                </h2>
+            </div>
+
+            <!-- Konten Utama -->
+            <div class="grid md:grid-cols-2 gap-6 text-md">
+                <!-- Kolom Kiri: Alamat dan Jam -->
+                <div>
+                    <p class="text-xl font-semibold mb-2">Alamat kampus:</p>
+                    <a class="text-lg" href="https://maps.app.goo.gl/WMQ67AVfUrhdaTDt7" target="_blank">
+                        Jl. Arjuna Utara No.9, Duri Kepa, Kec. Kb. Jeruk, Kota<br>
+                        Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510
+                    </a>
+                    <p class="text-xl mt-4">
+                        <span class="font-semibold">Jam layanan:</span><br>
+                        <span class="text-lg">Senin – Jumat, 10.00 – 17.00 WIB</span>
+                    </p>
+                </div>
+
+                <!-- Kolom Kanan: Kontak -->
+                <div class="text-md md:text-right">
+                    <p class="text-xl font-semibold">Email:</p>
+                    <a class="text-lg" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">
+                        operatorpkmueu@esaunggul.ac.id
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Instagram:</p>
+                    <a class="text-lg" href="https://instagram.com/pkm_center_ueu" target="_blank">
+                        @pkm_center_ueu
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Grup Whatsapp PKM UEU:</p>
+                    <a class="text-lg" href="https://chat.whatsapp.com/GIfqmjmHu4hA29R6NwnM54?mode=ac_t" target="_blank">Grup Whatsapp PKM UEU</a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-10 text-center text-lg text-white">
+                <span>&copy; 2025. All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk Scroll -->
+    <script>
+        function scrollToIdWithOffset(id) {
+            const yOffset = -110; // Offset untuk navbar
+            const element = document.querySelector(id);
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    </script>
+
+    <!-- Script untuk Navbar Mobile -->
+    <script>
+        document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+
+</html>

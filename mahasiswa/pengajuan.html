@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Program Kreativitas Mahasiswa 2025 - Wujudkan Ide Kreatifmu!">
+    <meta name="keywords" content="PKM, Program Kreativitas Mahasiswa, PIMNAS, mahasiswa, inovasi, kreativitas">
+    <meta name="author" content="Erik Wijaya - 20211002064 - DKV Universitas Esa Unggul">
+    <meta name="whatsapp" content="083890514361">
+    <meta name="email" content="wijayaerick289@student.esaunggul.ac.id">
+    <title>PKM UEU 2025</title>
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tangerine:wght@400;700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/images/bg-about.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.15;
+            z-index: -1;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white">
+    
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/20 backdrop-blur-md shadow-md relative overflow-hidden">
+        <!-- Background Image dengan opacity -->
+        <div class="absolute inset-0 bg-[url('../assets/images/bg-navbar.png')] bg-cover bg-center opacity-15 pointer-events-none"></div>
+
+        <!-- Konten navbar -->
+        <div class="relative z-10 max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+            <div class="flex items-center">
+                <img src="../assets/images/logo.png" alt="Logo" class="w-[80px] h-[80px] mr-2" />
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium text-lg text-[#0556AF] bg-white rounded-full shadow-lg px-4 py-1">
+                <a href="index.html" class="hover:font-bold">Beranda</a>
+                <a href="profile.html" class="hover:font-bold">Profil Organisasi</a>
+                <a href="about.html" class="hover:font-bold">Tentang PKM</a>
+                <a href="berita.html" class="hover:font-bold">Berita</a>
+                <a href="galeri.html" class="hover:font-bold">Galeri</a>
+                <a href="daftar-pengajuan.html" class="hover:font-bold active">Pengajuan Usulan</a>
+            </nav>
+            
+            <!-- Button Login -->
+            <div class="hidden md:flex space-x-3">
+                <button class="text-lg text-[#0556AF] bg-white font-medium rounded-full shadow-lg hover:font-bold px-4 py-1" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" class="md:hidden z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden text-lg bg-white/90 font-medium backdrop-blur px-4 pb-4">
+            <a href="index.html" class="block hover:text-[#0556AF] py-2">Beranda</a>
+            <a href="profile.html" class="block hover:text-[#0556AF] py-2">Profil Organisasi</a>
+            <a href="about.html" class="block hover:text-[#0556AF] py-2">Tentang PKM</a>
+            <a href="berita.html" class="block hover:text-[#0556AF] py-2">Berita</a>
+            <a href="galeri.html" class="block hover:text-[#0556AF] py-2">Galeri</a>
+            <a href="daftar-pengajuan.html" class="block hover:text-[#0556AF] py-2">Pengajuan Usulan</a>
+            <div class="mt-4 space-y-2">
+                <button class="w-full bg-[#0556AF] px-4 py-2 rounded-full text-white font-semibold" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section id="banner" class="relative py-8">
+        <!-- Background dengan overlay -->
+        <div class="absolute inset-0 bg-[#0556AF]">
+            <div class="w-full h-full bg-[url('../assets/images/bg-about.png')] bg-cover bg-center opacity-15"></div>
+        </div>
+
+        <!-- Konten -->
+        <div class="relative z-10 max-w-full mx-auto animate-fadeInUp">
+            <h2 id="text-profile" class="text-2xl md:text-5xl font-bold text-white text-center" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                Pengajuan Usulan Program Kreativitas Mahasiswa
+            </h2>
+            <p class="text-lg md:text-xl font-medium text-white text-center mt-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                Yuk, unggah usulan Anda dan jangan lupa pantau terus status usulan Anda!
+            </p>
+        </div>
+    </section>
+    
+    <!-- Pengajuan Usulan Section -->
+    <section id="pengajuan" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mt-8">
+                <a href="form-pengajuan.html" target="_blank" class="inline-block bg-[#FFBA00] text-gray-800 font-semibold px-6 py-2 rounded-xl hover:bg-[#0556AF] hover:text-white transition">
+                    <img src="../assets/images/aset Icon/Submit-01.svg" alt="icon PDF" class="inline-block mr-2" style="width: 24px; height: 24px;">
+                    Unggah Usulan
+                </a>
+            </div>
+
+            <div class="bg-[#0556AF] text-white p-8 md:p-12 shadow-lg animate-fadeInUp mt-8 rounded-lg">
+                <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Judul Usulan</h3>
+                <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">-</div>
+                <hr class="border-t-2 border-white mb-4">
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="font-semibold">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Bidang</h3>
+                        <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">-</div>
+                    </div>
+                    <div class="font-semibold border-t-2 md:border-t-0 md:border-l-2 border-white pt-4 lg:pl-4">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Status Upload</h3>
+                        <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);"><span class="text-red-300">Belum Diunggah</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-[#0556AF] text-white p-8 md:p-12 shadow-lg animate-fadeInUp mt-8 rounded-lg">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                    Pengumuman Lolos Seleksi Internal
+                </h3>
+                <hr class="border-t-2 border-white mb-4">
+
+                <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                    <!-- Belum ada pengumuman -->
+                    <div class="flex flex-col items-center justify-center text-center space-y-2 pt-4 md:pt-0">
+                        <div class="bg-yellow-100/10 p-2 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="text-yellow-100 text-md md:text-xl font-medium text-center" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                            Pengumuman akan disampaikan setelah seluruh proses seleksi internal selesai dilaksanakan
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sudah Submit Usulan -->
+    <!-- Pengajuan Usulan Section -->
+    <section id="pengajuan" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mt-8 flex flex-col md:flex-row gap-4">
+                <!-- Tombol Unggah Usulan -->
+                <a href="form-pengajuan-ubah.html" target="_blank"
+                    class="inline-flex items-center bg-[#FFBA00] text-gray-800 font-semibold px-6 py-2 rounded-xl hover:bg-[#0556AF] hover:text-white transition">
+                    <img src="../assets/images/aset Icon/Submit-01.svg" alt="icon PDF" class="w-6 h-6 mr-2">
+                    Ubah Usulan
+                </a>
+                
+                <!-- Tombol Lihat Hasil -->
+                <a href="form-pengajuan-hasil.html" target="_blank"
+                    class="inline-flex items-center bg-[#FFBA00] text-gray-800 font-semibold px-6 py-2 rounded-xl hover:bg-[#0556AF] hover:text-white transition">
+                    <img src="../assets/images/aset Icon/file PDF-01.svg" alt="icon PDF" class="w-6 h-6 mr-2">
+                    Lihat Usulan
+                </a>
+            </div>
+
+            <div class="bg-[#0556AF] text-white p-8 md:p-12 shadow-lg animate-fadeInUp mt-8 rounded-lg">
+                <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Judul Usulan</h3>
+                <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">PENGEMBANGAN GAME-BASED LEARNING UNTUK MENINGKATKAN ETIKA DAN LITERASI DIGITAL SISWA</div>
+                <hr class="border-t-2 border-white mb-4">
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="font-semibold">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Bidang</h3>
+                        <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">PKM-AI</div>
+                    </div>
+                    <div class="font-semibold border-t-2 md:border-t-0 md:border-l-2 border-white pt-4 lg:pl-4">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Status Upload</h3>
+                        <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);"><span class="text-green-300">Sudah Diunggah</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-[#0556AF] text-white p-8 md:p-12 shadow-lg animate-fadeInUp mt-8 rounded-lg">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                    Pengumuman Lolos Seleksi Internal
+                </h3>
+                <hr class="border-t-2 border-white mb-4">
+
+                <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                    <!-- Belum ada pengumuman -->
+                    <div class="flex flex-col items-center justify-center text-center space-y-2 pt-4 md:pt-0">
+                        <div class="bg-yellow-100/10 p-2 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="text-yellow-100 text-md md:text-xl font-medium text-center" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                            Pengumuman akan disampaikan setelah seluruh proses seleksi internal selesai dilaksanakan
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pengumuman Lolos Seleksi Internal -->
+    <!-- Pengajuan Usulan Section -->
+    <section id="pengajuan" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mt-8">                
+                <!-- Tombol Lihat Hasil -->
+                <a href="form-pengajuan-hasil.html" target="_blank"
+                    class="inline-flex items-center bg-[#FFBA00] text-gray-800 font-semibold px-6 py-2 rounded-xl hover:bg-[#0556AF] hover:text-white transition">
+                    <img src="../assets/images/aset Icon/file PDF-01.svg" alt="icon PDF" class="w-6 h-6 mr-2">
+                    Lihat Usulan
+                </a>
+            </div>
+
+            <div class="bg-[#0556AF] text-white p-8 md:p-12 shadow-lg animate-fadeInUp mt-8 rounded-lg">
+                <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Judul Usulan</h3>
+                <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">PENGEMBANGAN GAME-BASED LEARNING UNTUK MENINGKATKAN ETIKA DAN LITERASI DIGITAL SISWA</div>
+                <hr class="border-t-2 border-white mb-4">
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="font-semibold">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Bidang</h3>
+                        <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">PKM-AI</div>
+                    </div>
+                    <div class="font-semibold border-t-2 md:border-t-0 md:border-l-2 border-white pt-4 lg:pl-4">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Status Upload</h3>
+                        <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);"><span class="text-green-300">Sudah Diunggah</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-[#0556AF] text-white p-8 md:p-12 shadow-lg animate-fadeInUp mt-8 rounded-lg">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Pengumuman Lolos Seleksi Internal</h3>
+                <hr class="border-t-2 border-white mb-4">
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <!-- Lolos -->
+                    <div class="flex flex-col items-center justify-center text-center space-y-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="text-green-300 text-md md:text-xl font-medium" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Lolos Seleksi</span>
+                    </div>
+
+                    <!-- Tidak Lolos -->
+                    <div class="flex flex-col items-center justify-center text-center space-y-2 border-t-2 md:border-t-0 md:border-l-2 border-white pt-4 md:pt-0 lg:pl-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-300 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        <span class="text-red-300 text-md md:text-xl font-medium line-through opacity-50" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Tidak Lolos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pengumuman Tidak Lolos Seleksi Internal -->
+    <!-- Pengajuan Usulan Section -->
+    <section id="pengajuan" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="mt-8">                
+                <!-- Tombol Lihat Hasil -->
+                <a href="form-pengajuan-hasil.html" target="_blank"
+                    class="inline-flex items-center bg-[#FFBA00] text-gray-800 font-semibold px-6 py-2 rounded-xl hover:bg-[#0556AF] hover:text-white transition">
+                    <img src="../assets/images/aset Icon/file PDF-01.svg" alt="icon PDF" class="w-6 h-6 mr-2">
+                    Lihat Usulan
+                </a>
+            </div>
+
+            <div class="bg-[#0556AF] text-white p-8 md:p-12 shadow-lg animate-fadeInUp mt-8 rounded-lg">
+                <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Judul Usulan</h3>
+                <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">PENGEMBANGAN GAME-BASED LEARNING UNTUK MENINGKATKAN ETIKA DAN LITERASI DIGITAL SISWA</div>
+                <hr class="border-t-2 border-white mb-4">
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="font-semibold">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Bidang</h3>
+                        <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">PKM-AI</div>
+                    </div>
+                    <div class="font-semibold border-t-2 md:border-t-0 md:border-l-2 border-white pt-4 lg:pl-4">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Status Upload</h3>
+                        <div class="text-lg md:text-xl font-medium mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);"><span class="text-green-300">Sudah Diunggah</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-[#0556AF] text-white p-8 md:p-12 shadow-lg animate-fadeInUp mt-8 rounded-lg">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Pengumuman Lolos Seleksi Internal</h3>
+                <hr class="border-t-2 border-white mb-4">
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <!-- Lolos -->
+                    <div class="flex flex-col items-center justify-center text-center space-y-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-300 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="text-green-300 text-md md:text-xl font-medium line-through opacity-50" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Lolos Seleksi</span>
+                    </div>
+
+                    <!-- Tidak Lolos -->
+                    <div class="flex flex-col items-center justify-center text-center space-y-2 border-t-2 md:border-t-0 md:border-l-2 border-white pt-4 md:pt-0 lg:pl-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        <span class="text-red-300 text-md md:text-xl font-medium" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Tidak Lolos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0556AF] text-white py-10">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Judul Tengah -->
+            <div class="text-center mb-8">
+                <h2 class="font-bold text-2xl md:text-3xl uppercase">
+                    PKM CENTER UNIVERSITAS ESA UNGGUL
+                </h2>
+            </div>
+
+            <!-- Konten Utama -->
+            <div class="grid md:grid-cols-2 gap-6 text-md">
+                <!-- Kolom Kiri: Alamat dan Jam -->
+                <div>
+                    <p class="text-xl font-semibold mb-2">Alamat kampus:</p>
+                    <a class="text-lg" href="https://maps.app.goo.gl/WMQ67AVfUrhdaTDt7" target="_blank">
+                        Jl. Arjuna Utara No.9, Duri Kepa, Kec. Kb. Jeruk, Kota<br>
+                        Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510
+                    </a>
+                    <p class="text-xl mt-4">
+                        <span class="font-semibold">Jam layanan:</span><br>
+                        <span class="text-lg">Senin – Jumat, 10.00 – 17.00 WIB</span>
+                    </p>
+                </div>
+
+                <!-- Kolom Kanan: Kontak -->
+                <div class="text-md md:text-right">
+                    <p class="text-xl font-semibold">Email:</p>
+                    <a class="text-lg" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">
+                        operatorpkmueu@esaunggul.ac.id
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Instagram:</p>
+                    <a class="text-lg" href="https://instagram.com/pkm_center_ueu" target="_blank">
+                        @pkm_center_ueu
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Grup Whatsapp PKM UEU:</p>
+                    <a class="text-lg" href="https://chat.whatsapp.com/GIfqmjmHu4hA29R6NwnM54?mode=ac_t" target="_blank">Grup Whatsapp PKM UEU</a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-10 text-center text-lg text-white">
+                <span>&copy; 2025. All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modal Timeline -->
+    <div id="timelineModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+            <h2 class="text-2xl font-bold text-[#0556AF] mb-4">Informasi Timeline PKM UEU 2025</h2>
+            <p class="text-[#0556AF] text-md mb-4">
+                Berikut adalah tahapan penting dalam pengajuan PKM:<br><br>
+                🔹 <strong>Sosialisasi PKM Universitas Esa Unggul:</strong> 5 Mei 2025<br>
+                🔹 <strong>Coaching Clinic PKM Universtias Esa Unggul:</strong> 4 Mei 2025<br>
+                🔹 <strong>Penyusunan dan Unggah Proposal PKM:</strong> 5-25 Mei 2025<br>
+                🔹 <strong>Seleksi Internal:</strong> 26-27 Mei 2025<br>
+                🔹 <strong>Pengumuman Seleksi Internal:</strong> 28 Mei 2025<br>
+                🔹 <strong>Unggah Usulan di Simbelmawa::</strong> 29 Mei 2025
+            </p>
+            <button onclick="closeModal()" class="text-4xl absolute top-0 right-3 text-red-600 hover:text-red-800 font-medium">&times;</button>
+            <div class="text-right mt-4">
+                <button onclick="closeModal()" class="text-white bg-red-600 hover:bg-red-800 transition font-semibold px-6 py-2 rounded-xl">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tampilkan modal saat halaman dimuat
+        window.onload = function () {
+            document.getElementById('timelineModal').classList.remove('hidden');
+        };
+
+        function closeModal() {
+            document.getElementById('timelineModal').classList.add('hidden');
+        }
+    </script>
+
+    <!-- Script untuk Navbar Mobile -->
+    <script>
+        document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+
+</html>

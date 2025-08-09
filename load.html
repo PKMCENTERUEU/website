@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Program Kreativitas Mahasiswa 2025 - Wujudkan Ide Kreatifmu!">
+    <meta name="keywords" content="PKM, Program Kreativitas Mahasiswa, PIMNAS, mahasiswa, inovasi, kreativitas">
+    <title>PKM 2025 - Universitas Esa Unggul</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+
+    <style>
+        @keyframes fadeInBackground {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0.15;
+            }
+        }
+
+        @keyframes rotateInLogo {
+            0% {
+                transform: scale(0.2) rotate(-180deg);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes popupText {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .splash-bg {
+            animation: fadeInBackground 1.5s ease forwards;
+        }
+
+        .splash-logo {
+            animation: rotateInLogo 1.2s ease 1s forwards;
+        }
+
+        .splash-text {
+            animation: popupText 1s ease 2s forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Splash Screen -->
+    <div id="splashScreen" class="fixed inset-0 z-[9999] flex items-center justify-center flex-col bg-white">
+        <img src="assets/images/bg-loading.png" alt="Background Loading" class="absolute inset-0 w-full h-full object-cover opacity-0 splash-bg">
+        <img src="assets/images/logo-loading.png" alt="Logo Loading" class="w-80 h-80 opacity-0 splash-logo relative z-10">
+        <p class="text-blue-700 text-5xl font-bold mt-4 opacity-0 splash-text relative z-10 text-center px-6">
+            PROGRAM KREATIVITAS MAHASISWA <br />UNIVERSITAS ESA UNGGUL
+        </p>
+    </div>
+
+    <!-- Konten utama -->
+    <div id="mainContent" class="relative z-0">
+        <!-- Tambahkan konten utama kamu di sini -->
+        <div class="p-6"></div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('splashScreen').classList.add('opacity-0');
+                setTimeout(() => {
+                    document.getElementById('splashScreen').style.display = 'none';
+                }, 500);
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>

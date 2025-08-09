@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Program Kreativitas Mahasiswa 2025 - Wujudkan Ide Kreatifmu!">
+    <meta name="keywords" content="PKM, Program Kreativitas Mahasiswa, PIMNAS, mahasiswa, inovasi, kreativitas">
+    <meta name="author" content="Erik Wijaya - 20211002064 - DKV Universitas Esa Unggul">
+    <meta name="whatsapp" content="083890514361">
+    <meta name="email" content="wijayaerick289@student.esaunggul.ac.id">
+    <title>PKM UEU 2025</title>
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeInUp: 'fadeInUp 1s ease-out both',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tangerine:wght@400;700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease-out both;
+        }
+
+        .bg-custom-gradient {
+            background: linear-gradient(to bottom, white 60%, #FFBA00 100%);
+        }
+
+        @keyframes fadeInBackground {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0.15;
+            }
+        }
+
+        @keyframes rotateInLogo {
+            0% {
+                transform: scale(0.2) rotate(-180deg);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes popupText {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="bg-white">
+    
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/20 backdrop-blur-md shadow-md relative overflow-hidden">
+        <!-- Background Image dengan opacity -->
+        <div class="absolute inset-0 bg-[url('../assets/images/bg-navbar.png')] bg-cover bg-center opacity-15 pointer-events-none"></div>
+
+        <!-- Konten navbar -->
+        <div class="relative z-10 max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+            <div class="flex items-center">
+                <img src="../assets/images/logo.png" alt="Logo" class="w-[80px] h-[80px] mr-2" />
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium text-lg text-[#0556AF] bg-white rounded-full shadow-lg px-4 py-1">
+                <a href="index.html" class="hover:font-bold active">Beranda</a>
+                <a href="profile.html" class="hover:font-bold">Profil Organisasi</a>
+                <a href="about.html" class="hover:font-bold">Tentang PKM</a>
+                <a href="berita.html" class="hover:font-bold">Berita</a>
+                <a href="galeri.html" class="hover:font-bold">Galeri</a>
+                <a href="usulan-bidang.html" class="hover:font-bold">Identitas Usulan</a>
+            </nav>
+            
+            <!-- Button Login -->
+            <div class="hidden md:flex space-x-3">
+                <button class="text-lg text-[#0556AF] bg-white font-medium rounded-full shadow-lg hover:font-bold px-4 py-1" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" class="md:hidden z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden text-lg bg-white/90 font-medium backdrop-blur px-4 pb-4">
+            <a href="index.html" class="block hover:text-[#0556AF] py-2">Beranda</a>
+            <a href="profile.html" class="block hover:text-[#0556AF] py-2">Profil Organisasi</a>
+            <a href="about.html" class="block hover:text-[#0556AF] py-2">Tentang PKM</a>
+            <a href="berita.html" class="block hover:text-[#0556AF] py-2">Berita</a>
+            <a href="galeri.html" class="block hover:text-[#0556AF] py-2">Galeri</a>
+            <a href="usulan-bidang.html" class="block hover:text-[#0556AF] py-2">Identitas Usulan</a>
+            <div class="mt-4 space-y-2">
+                <button class="w-full bg-[#0556AF] px-4 py-2 rounded-full text-white font-semibold" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section id="banner" class="relative h-screen flex items-center justify-center overflow-hidden mt-[-102px]">
+        <!-- Background Image -->
+        <img src="../assets/images/banner.png" alt="Banner Image" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        <div id="controls-carousel" class="relative w-full" data-carousel="slide" data-carousel-interval="5000">
+            <!-- Carousel wrapper -->
+            <div class="relative h-[600px] overflow-hidden rounded-lg">
+                <!-- Item 1 (aktif) -->
+                <div class="duration-700 ease-in-out mt-[200px]" data-carousel-item="active">
+                    <div class="relative text-center text-white px-4 max-w-7xl mx-auto animate-fadeInUp">
+                        <h1 class="text-2xl lg:text-4xl font-bold mb-5" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                            Wujudkan Ide Kreatifmu di Program Kreativitas Mahasiswa 2025!
+                            <br>Tempat mahasiswa berkarya, berinovasi, dan menuju PIMNAS
+                        </h1>
+                        <button onclick="location.href='about.html';" class="bg-white text-[#0556AF] px-6 py-3 rounded-full font-semibold hover:bg-[#0556AF] hover:text-white transition mt-5">
+                            Pelajari lebih lanjut &gt;
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out mt-[80px]" data-carousel-item>
+                    <div class="relative text-center text-white px-4 max-w-7xl mx-auto animate-fadeInUp">
+                        <h1 class="text-2xl lg:text-4xl font-bold mb-[50px]" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                            Berita & Pengumuman
+                        </h1>
+                    </div>
+
+                    <!-- Konten -->
+                    <div class="flex justify-center items-center gap-6 flex-wrap">
+                        <!-- Gambar 1 -->
+                        <div class="relative w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                            <img src="../assets/images/banner/1.png" alt="Default" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-60 text-white flex flex-col items-center justify-center text-center px-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <h2 class="text-sm xl:text-2xl font-bold leading-tight">Segera dimulai PKM UEU 2025</h2>
+                                <a href="berita.html" class="text-sm xl:text-md mt-4 inline-block bg-white text-[#0556AF] font-semibold px-5 py-2 rounded-full hover:bg-[#0556AF] hover:text-white transition">
+                                    Lihat
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Gambar 2 -->
+                        <div class="relative w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                            <img src="../assets/images/banner/2.png" alt="Default" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-60 text-white flex flex-col items-center justify-center text-center px-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <h2 class="text-sm xl:text-2xl font-bold leading-tight">Sosialisasi PKM 2025</h2>
+                                <a href="berita.html" class="text-sm xl:text-md mt-4 inline-block bg-white text-[#0556AF] font-semibold px-5 py-2 rounded-full hover:bg-[#0556AF] hover:text-white transition">
+                                    Lihat
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Gambar 3 -->
+                        <div class="relative w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                            <img src="../assets/images/banner/3.png" alt="Default" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-60 text-white flex flex-col items-center justify-center text-center px-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <h2 class="text-sm xl:text-2xl font-bold leading-tight">Unduh Panduan PKM 2025</h2>
+                                <a href="berita.html" class="text-sm xl:text-md mt-4 inline-block bg-white text-[#0556AF] font-semibold px-5 py-2 rounded-full hover:bg-[#0556AF] hover:text-white transition">
+                                    Lihat
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Gambar 4 -->
+                        <div class="relative w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] rounded-xl overflow-hidden shadow-lg group cursor-pointer">
+                            <img src="../assets/images/banner/4.png" alt="Default" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-60 text-white flex flex-col items-center justify-center text-center px-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <h2 class="text-sm xl:text-2xl font-bold leading-tight">Syarat & Ketentuan</h2>
+                                <a href="berita.html" class="text-sm xl:text-md mt-4 inline-block bg-white text-[#0556AF] font-semibold px-5 py-2 rounded-full hover:bg-[#0556AF] hover:text-white transition">
+                                    Lihat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="relative text-center text-white px-4 max-w-7xl mx-auto animate-fadeInUp">
+                        <button onclick="location.href='berita.html';" class="bg-white text-[#0556AF] px-6 py-3 rounded-full font-semibold hover:bg-[#0556AF] hover:text-white transition mt-5">
+                            Lihat lainnya &gt;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="relative text-center text-white px-4 max-w-7xl mx-auto animate-fadeInUp">
+                        <h1 class="text-2xl lg:text-4xl font-bold mb-[50px] mt-[100px] xl:mt-[25px]" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                            Prestasi Mahasiswa
+                        </h1>
+                    </div>
+
+                    <!-- Konten -->
+                    <div class="flex justify-center items-center gap-6 flex-wrap">
+                        <!-- Card Template -->
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] transition-all duration-300 hover:bg-yellow-400">
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 1.png" alt="Meishe Agatha" class="w-full h-60 object-cover rounded-2xl transition-all duration-300 hover:scale-105" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Meishe Agatha</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Insentif <br> PKM-AI
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Gambar 2 -->
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] transition-all duration-300 hover:bg-yellow-400">
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 2.png" alt="Felicia" class="w-full h-60 object-cover rounded-2xl transition-all duration-300 hover:scale-105" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Felicia</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Pendanaan <br> PKM-PM
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Gambar 3 -->
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] transition-all duration-300 hover:bg-yellow-400">
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 3.png" alt="Bella Monica" class="w-full h-60 object-cover rounded-2xl transition-all duration-300 hover:scale-105" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Bella Monica</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Pendanaan <br> PKM-RSH
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Gambar 4 -->
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] transition-all duration-300 hover:bg-yellow-400">
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 4.png" alt="Viandra Adelia" class="w-full h-60 object-cover rounded-2xl transition-all duration-300 hover:scale-105" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Viandra Adelia</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Insentif <br> PKM-AI
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="relative text-center text-white px-4 max-w-7xl mx-auto animate-fadeInUp">
+                        <button onclick="location.href='galeri.html';" class="bg-white text-[#0556AF] px-6 py-3 rounded-full font-semibold hover:bg-[#0556AF] hover:text-white transition mt-5">
+                            Lihat lainnya &gt;
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigasi kiri -->
+            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
+                    <svg class="w-4 h-4 text-white rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <!-- Navigasi kanan -->
+            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
+                    <svg class="w-4 h-4 text-white rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+
+        <!-- Marquee -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden bg-black bg-opacity-0 text-white py-2">
+            <marquee behavior="scroll" direction="left" scrollamount="5" loop="infinite" class="text-2xl lg:text-4xl font-bold">
+                <span>PROGRAM KREATIVITAS MAHASISWA</span>
+                <img src="../assets/images/LOGO PKM UEU putih-03.png" alt="Logo PKM" class="w-[40px] h-[40px] inline-block mt-[-10px]">
+                <span>UNIVERSITAS ESA UNGGUL</span>
+                <img src="../assets/images/LOGO PKM UEU putih-03.png" alt="Logo PKM" class="w-[40px] h-[40px] inline-block mt-[-10px]">
+                <span>PROGRAM KREATIVITAS MAHASISWA</span>
+            </marquee>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-16 bg-[#0556AF] overflow-hidden">
+        <div class="absolute inset-0 bg-[url('../assets/images/bg-about.png')] bg-cover bg-center opacity-15 pointer-events-none"></div>
+
+        <!-- Konten utama -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 mt-[50px] mb-[50px]">
+            <div class="rounded-3xl p-8 md:p-12 shadow-lg animate-fadeInUp" style="background: linear-gradient(to bottom, white 70%, #FFBA00 100%)">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <!-- Grid 1: Text -->
+                    <div class="md:col-span-2 text-[#0556AF]">
+                        <h2 class="text-3xl lg:text-4xl font-bold lg:mt-[60px] mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                            PROGRAM KREATIVITAS MAHASISWA
+                        </h2>
+                        <p class="text-lg md:text-xl font-medium text-justify leading-relaxed mb-6">
+                            Program Kreativitas Mahasiswa (PKM) Universitas Esa Unggul adalah wadah pengembangan potensi
+                            mahasiswa untuk membentuk generasi yang kritis dan inovatif. Program ini mendukung kebijakan
+                            Kemendikbudristek melalui pengiriman proposal ke tingkat nasional dan pembinaan menuju
+                            PIMNAS.
+                        </p>
+                        <a href="about.html" class="inline-block bg-[#0556AF] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#044a96] transition">
+                            Pelajari lebih lanjut &gt;
+                        </a>
+                    </div>
+
+                    <!-- Grid 2: Image -->
+                    <div class="hidden lg:block">
+                        <img src="../assets/images/about.png" alt="Tentang PKM" class="w-full max-w-sm mx-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tahapan PKM Section -->
+    <section id="tahapan-pkm" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-[#0556AF] text-center mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Tahapan Program Kreativitas Mahasiswa</h2>
+            <img src="../assets/images/Tahapan PKM.drawio.png" alt="tahapan pkm" class="w-full max-w-5xl mx-auto mb-8">
+
+            <!-- Button "Pelajari lebih lanjut" -->
+            <div class="text-center mt-10">
+                <a href="about.html#panduan-pkm" class="inline-block bg-white text-[#0556AF] border border-[#0556AF] hover:bg-[#0556AF] hover:text-white transition font-semibold px-6 py-2 rounded-full">
+                    Pelajari lebih lanjut &gt;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center text-[#0556AF] mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                Kumpulan Berita Terbaru
+            </h2>
+            <p class="text-lg md:text-xl text-center font-medium text-[#0556AF] mb-10">
+                Temukan update terbaru, kegiatan inspiratif, dan kesempatan untuk berprestasi melalui Program Kreativitas Mahasiswa.
+            </p>
+
+            <!-- Grid News -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <!-- Slider utama -->
+                <div class="relative rounded-xl overflow-hidden shadow-md">
+                    <div onclick="location.href='berita-terbaru.html'" id="slider" class="relative w-[320px] h-[320px] xl:w-full xl:h-full overflow-hidden border-4 border-[#0556AF] shadow-lg rounded-xl hover:cursor-pointer">
+                        <div class="slide hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                            <img src="../assets/images/berita/UEU Get Ready to PKM 2025.png" alt="Berita 1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="slide hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                            <img src="../assets/images/berita/Syarat & Ketentuan.png" alt="Berita 2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="slide hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                            <img src="../assets/images/berita/COACHING CLINIC PKM UEU 2025.png" alt="Berita 3" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div onclick="location.href='berita-terbaru.html'" class="rounded-xl overflow-hidden shadow-md border-4 border-[#0556AF] hover:cursor-pointer">
+                        <img src="../assets/images/berita/Syarat & Ketentuan.png" alt="Berita 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div onclick="location.href='berita-terbaru.html'" class="rounded-xl overflow-hidden shadow-md border-4 border-[#0556AF] hover:cursor-pointer">
+                        <img src="../assets/images/berita/Sosiallisasi PKM dikti 2025.png" alt="Berita 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div onclick="location.href='berita-terbaru.html'" class="rounded-xl overflow-hidden shadow-md border-4 border-[#0556AF] hover:cursor-pointer">
+                        <img src="../assets/images/berita/Timeline PKM UEU.png" alt="Berita 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div onclick="location.href='berita-terbaru.html'" class="rounded-xl overflow-hidden shadow-md border-4 border-[#0556AF] hover:cursor-pointer">
+                        <img src="../assets/images/berita/Skema PKM UEU 2025.png" alt="Berita 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="text-center mt-10">
+                <a href="berita.html" class="inline-block bg-white text-[#0556AF] border border-[#0556AF] hover:bg-[#0556AF] hover:text-white transition font-semibold px-6 py-2 rounded-full">
+                    Lihat lainnya &gt;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="documentation" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center text-[#0556AF] mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                Dokumentasi Kegiatan PKM Esa Unggul
+            </h2>
+            <p class="text-lg md:text-xl text-center font-medium text-[#0556AF] mb-10">
+                Dokumentasi kegiatan, prestasi, dan momen terbaik PKM Universitas Esa Unggul
+            </p>
+
+            <!-- Grid Documentation -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <!-- Slider 1 -->
+                <div class="flex justify-center">
+                    <div class="relative rounded-xl overflow-hidden shadow-md w-[320px] h-[320px] xl:w-[500px] xl:h-[500px] border-4 border-[#0556AF]">
+                        <div id="slider1" class="relative w-full h-full overflow-hidden">
+                            <div class="slide1 hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                                <img src="../assets/images/dokumentasi/1.png" alt="Dok 1" class="w-full h-full object-cover">
+                            </div>
+                            <div class="slide1 hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                                <img src="../assets/images/dokumentasi/2.png" alt="Dok 2" class="w-full h-full object-cover">
+                            </div>
+                            <div class="slide1 hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                                <img src="../assets/images/dokumentasi/3.png" alt="Dok 2" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider 2 -->
+                <div class="flex justify-center">
+                    <div class="relative rounded-xl overflow-hidden shadow-md w-[320px] h-[320px] xl:w-[500px] xl:h-[500px] border-4 border-[#0556AF]">
+                        <div id="slider2" class="relative w-full h-full overflow-hidden">
+                            <div class="slide2 hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                                <img src="../assets/images/dokumentasi/4.png" alt="Dok 5" class="w-full h-full object-cover">
+                            </div>
+                            <div class="slide2 hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                                <img src="../assets/images/dokumentasi/5.png" alt="Dok 6" class="w-full h-full object-cover">
+                            </div>
+                            <div class="slide2 hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                                <img src="../assets/images/dokumentasi/6.png" alt="Dok 6" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="text-center mt-10">
+                <a href="galeri.html" class="inline-block bg-white text-[#0556AF] border border-[#0556AF] hover:bg-[#0556AF] hover:text-white transition font-semibold px-6 py-2 rounded-full">
+                    Lihat lainnya &gt;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prestasi Mahasiswa -->
+    <section id="prestasi" class="bg-white text-white relative h-[800px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <img src="../assets/images/prestasi.png" alt="Prestasi Image" class="absolute inset-0 w-full h-full object-cover lazyload" loading="lazy">
+
+        <!-- Overlay hitam 50% -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        <!-- Konten -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 animate-fadeInUp">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-2 text-white" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Prestasi Mahasiswa</h2>
+            <p class="text-center text-white mb-10">
+                Ide cerdas membutuhkan tindakan yang berani
+            </p>
+
+            <!-- Swiper Container -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Card Item -->
+                    <div class="swiper-slide">
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] mx-auto transition-all duration-300 hover:bg-yellow-400">
+                            <!-- Image wrapper with bg-yellow -->
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 1.png" alt="Meishe Agatha" class="w-full h-60 object-cover rounded-2xl hover:scale-105 transition-all duration-300" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Meishe Agatha</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Insentif <br> PKM-AI
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] mx-auto transition-all duration-300 hover:bg-yellow-400">
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 2.png" alt="Felicia" class="w-full h-60 object-cover rounded-2xl hover:scale-105 transition-all duration-300" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Felicia</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Pendanaan <br> PKM-PM
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] mx-auto transition-all duration-300 hover:bg-yellow-400">
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 3.png" alt="Bella Monica" class="w-full h-60 object-cover rounded-2xl hover:scale-105 transition-all duration-300" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Bella Monica</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Pendanaan <br> PKM-RSH
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] mx-auto transition-all duration-300 hover:bg-yellow-400">
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 4.png" alt="Viandra Adelia" class="w-full h-60 object-cover rounded-2xl hover:scale-105 transition-all duration-300" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Viandra Adelia</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Insentif <br> PKM-AI
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] mx-auto transition-all duration-300 hover:bg-yellow-400">
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 5.png" alt="Ahmad Goriri" class="w-full h-60 object-cover rounded-2xl hover:scale-105 transition-all duration-300" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Ahmad Goriri</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Insentif <br> PKM-GFT
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] mx-auto transition-all duration-300 hover:bg-yellow-400">
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 6.png" alt="Muhamad Rifqi" class="w-full h-60 object-cover rounded-2xl hover:scale-105 transition-all duration-300" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Muhamad Rifqi</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Pendanaan <br> PKM-K
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] mx-auto transition-all duration-300 hover:bg-yellow-400">
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 7.png" alt="Fadhil Muh" class="w-full h-60 object-cover rounded-2xl hover:scale-105 transition-all duration-300" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Fadhil Muh</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Insentif <br> PKM-AI
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="group bg-white text-center rounded-3xl shadow-md p-4 w-[250px] xl:w-[300px] mx-auto transition-all duration-300 hover:bg-yellow-400">
+                            <div class="bg-yellow-400 rounded-2xl mb-4 transition-all duration-300 group-hover:bg-white">
+                                <img src="../assets/images/Foto ORG/Testi foto 8.png" alt="Ratu Aulia" class="w-full h-60 object-cover rounded-2xl hover:scale-105 transition-all duration-300" />
+                            </div>
+                            <h3 class="text-[#0556AF] font-bold text-2xl">Ratu Aulia</h3>
+                            <div class="bg-[#0556AF] rounded-xl mt-2">
+                                <p class="text-white text-lg font-medium py-1 px-2 rounded-[5px] inline-block mt-1">
+                                    Peraih Pendanaan <br> PKM-K
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tombol lihat lainnya -->
+            <div class="text-center mt-10">
+                <a href="galeri.html" class="inline-block bg-white text-[#0556AF] border border-[#0556AF] hover:bg-[#0556AF] hover:text-white transition font-semibold px-6 py-2 rounded-full">
+                    Lihat lainnya &gt;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0556AF] text-white py-10">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Judul Tengah -->
+            <div class="text-center mb-8">
+                <h2 class="font-bold text-2xl md:text-3xl uppercase">
+                    PKM CENTER UNIVERSITAS ESA UNGGUL
+                </h2>
+            </div>
+
+            <!-- Konten Utama -->
+            <div class="grid md:grid-cols-2 gap-6 text-md">
+                <!-- Kolom Kiri: Alamat dan Jam -->
+                <div>
+                    <p class="text-xl font-semibold mb-2">Alamat kampus:</p>
+                    <a class="text-lg" href="https://maps.app.goo.gl/WMQ67AVfUrhdaTDt7" target="_blank">
+                        Jl. Arjuna Utara No.9, Duri Kepa, Kec. Kb. Jeruk, Kota<br>
+                        Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510
+                    </a>
+                    <p class="text-xl mt-4">
+                        <span class="font-semibold">Jam layanan:</span><br>
+                        <span class="text-lg">Senin – Jumat, 10.00 – 17.00 WIB</span>
+                    </p>
+                </div>
+
+                <!-- Kolom Kanan: Kontak -->
+                <div class="text-md md:text-right">
+                    <p class="text-xl font-semibold">Email:</p>
+                    <a class="text-lg" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">
+                        operatorpkmueu@esaunggul.ac.id
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Instagram:</p>
+                    <a class="text-lg" href="https://instagram.com/pkm_center_ueu" target="_blank">
+                        @pkm_center_ueu
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Grup Whatsapp PKM UEU:</p>
+                    <a class="text-lg" href="https://chat.whatsapp.com/GIfqmjmHu4hA29R6NwnM54?mode=ac_t" target="_blank">Grup Whatsapp PKM UEU</a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-10 text-center text-lg text-white">
+                <span>&copy; 2025. All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk Navbar Mobile -->
+    <script>
+        document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+    <!-- Script Slider Berita -->
+    <script>
+        // Slider utama
+        const slides = document.querySelectorAll('#slider .slide');
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.add('hidden');
+                slide.classList.remove('opacity-100');
+                if (i === index) {
+                    slide.classList.remove('hidden');
+                    slide.classList.add('opacity-100');
+                }
+            });
+        }
+
+        function nextSlide() {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }
+
+        showSlide(current);
+        setInterval(nextSlide, 3000);
+
+        // Mini Slider (Berita lainnya)
+        const miniSlides = document.querySelectorAll('#miniSlider .mini-slide');
+        let miniCurrent = 0;
+
+        function showMiniSlide(index) {
+            miniSlides.forEach((slide, i) => {
+                slide.classList.add('hidden');
+                if (i === index || i === index + 1) {
+                    slide.classList.remove('hidden');
+                }
+            });
+        }
+
+        function nextMiniSlide() {
+            miniCurrent = (miniCurrent + 2) % miniSlides.length;
+            showMiniSlide(miniCurrent);
+        }
+
+        showMiniSlide(miniCurrent);
+        setInterval(nextMiniSlide, 3000);
+    </script>
+
+    <!-- Script Slider Dokumentasi -->
+    <script>
+        function initSlider(slideClass, interval = 3000) {
+            const slides = document.querySelectorAll(`.${slideClass}`);
+            let current = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.add('hidden');
+                    slide.classList.remove('opacity-100');
+                    if (i === index) {
+                        slide.classList.remove('hidden');
+                        slide.classList.add('opacity-100');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            }
+
+            showSlide(current);
+            setInterval(nextSlide, interval);
+        }
+
+        // Inisialisasi dua slider berbeda
+        document.addEventListener('DOMContentLoaded', function () {
+            initSlider('slide1');
+            initSlider('slide2');
+        });
+    </script>
+
+    <!-- Inisialisasi Swiper -->
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 1000, // 1 detik
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+</body>
+
+</html>

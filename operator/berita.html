@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Program Kreativitas Mahasiswa 2025 - Wujudkan Ide Kreatifmu!">
+    <meta name="keywords" content="PKM, Program Kreativitas Mahasiswa, PIMNAS, mahasiswa, inovasi, kreativitas">
+    <meta name="author" content="Erik Wijaya - 20211002064 - DKV Universitas Esa Unggul">
+    <meta name="whatsapp" content="083890514361">
+    <meta name="email" content="wijayaerick289@student.esaunggul.ac.id">
+    <title>PKM UEU 2025</title>
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeInUp: 'fadeInUp 1s ease-out both',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tangerine:wght@400;700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+
+        .custom-select-wrapper::after {
+            content: '▼';
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #0556AF;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
+
+        .custom-select-wrapper.open::after {
+            content: '▲';
+        }
+
+        select.custom-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 100%;
+            background-color: white;
+            border: 2px solid #0556AF;
+            color: #0556AF;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 2rem 0.5rem 1rem;
+            border-radius: 9999px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        select.custom-select:focus {
+            outline: none;
+            border-color: #0556AF;
+            box-shadow: 2px #bfdbfe;
+        }
+
+        select.custom-select option {
+            padding: 6px 10px;
+            line-height: 1.8rem;
+            font-weight: medium;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/20 backdrop-blur-md shadow-md relative overflow-hidden">
+        <!-- Background Image dengan opacity -->
+        <div class="absolute inset-0 bg-[url('../assets/images/bg-navbar.png')] bg-cover bg-center opacity-15 pointer-events-none"></div>
+
+        <!-- Konten navbar -->
+        <div class="relative z-10 max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+            <div class="flex items-center">
+                <img src="../assets/images/logo.png" alt="Logo" class="w-[80px] h-[80px] mr-2" />
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium text-lg text-[#0556AF] bg-white rounded-full shadow-lg px-4 py-1">
+                <a href="index.html" class="hover:font-bold">Beranda</a>
+                <a href="profile.html" class="hover:font-bold">Profil Organisasi</a>
+                <a href="about.html" class="hover:font-bold">Tentang PKM</a>
+                <a href="berita.html" class="hover:font-bold active">Berita</a>
+                <a href="galeri.html" class="hover:font-bold">Galeri</a>
+                <a href="usulan-bidang.html" class="hover:font-bold">Identitas Usulan</a>
+            </nav>
+            
+            <!-- Button Login -->
+            <div class="hidden md:flex space-x-3">
+                <button class="text-lg text-[#0556AF] bg-white font-medium rounded-full shadow-lg hover:font-bold px-4 py-1" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" class="md:hidden z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden text-lg bg-white/90 font-medium backdrop-blur px-4 pb-4">
+            <a href="index.html" class="block hover:text-[#0556AF] py-2">Beranda</a>
+            <a href="profile.html" class="block hover:text-[#0556AF] py-2">Profil Organisasi</a>
+            <a href="about.html" class="block hover:text-[#0556AF] py-2">Tentang PKM</a>
+            <a href="berita.html" class="block hover:text-[#0556AF] py-2">Berita</a>
+            <a href="galeri.html" class="block hover:text-[#0556AF] py-2">Galeri</a>
+            <a href="usulan-bidang.html" class="block hover:text-[#0556AF] py-2">Identitas Usulan</a>
+            <div class="mt-4 space-y-2">
+                <button class="w-full bg-[#0556AF] px-4 py-2 rounded-full text-white font-semibold" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section id="banner" class="relative py-8">
+        <!-- Background dengan overlay -->
+        <div class="absolute inset-0 bg-[#0556AF]">
+            <div class="w-full h-full bg-[url('../assets/images/bg-about.png')] bg-cover bg-center opacity-15"></div>
+        </div>
+
+        <!-- Konten -->
+        <div class="relative z-10 max-w-full mx-auto">
+            <h2 id="text-profile" class="text-2xl md:text-5xl font-bold text-white text-center animate-fadeInUp" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                Berita & Informasi <br> Program Kreativitas Mahasiswa
+            </h2>
+        </div>
+    </section>
+
+    <!-- News Main Section -->
+    <section id="newsMain" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Bar Pencarian & Kategori -->
+            <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 items-center mb-8">
+                <!-- Select Kategori -->
+                <div class="custom-select-wrapper relative max-w-[250px]" id="selectWrapper">
+                    <select id="newsSelect" onchange="handleNewsChange()" class="custom-select">
+                        <option value="berita.html" selected>Berita Utama</option>
+                        <option value="berita-semua.html">Semua Berita</option>
+                        <option value="berita-terbaru.html">Berita Terbaru</option>
+                    </select>
+                </div>
+
+                <!-- Input dan Filter -->
+                <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-stretch justify-end">
+                    <input type="text" placeholder="Telusuri berita..." id="searchInput" class="flex-1 px-4 py-2 border-2 border-[#0556AF] rounded-full shadow text-[#0556AF] focus:outline-none focus:ring-2 focus:ring-blue-600" />
+                    <button onclick="applyFilter()" class="px-6 py-2 rounded-full bg-white text-[#0556AF] border-2 border-[#0556AF] font-semibold hover:bg-[#0556AF] hover:text-white hover:border-2 hover:border-white transition">
+                        Telusuri
+                    </button>
+                </div>
+            </div>
+
+            <!-- Judul -->
+            <h2 class="text-3xl md:text-4xl font-bold text-left text-[#0556AF] mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                Berita Utama
+            </h2>
+            <p class="text-lg md:text-xl font-medium text-left text-[#0556AF] mb-10">
+                Tetap terhubung dengan update terbaru seputar Program Kreativitas Mahasiswa, info kegiatan, pengumuman penting, dan inspirasi mahasiswa kreatif.
+            </p>
+
+            <!-- Grid News -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div onclick="openModal('1')" class="w-[320px] h-[320px] xl:w-full xl:h-[600px] cursor-pointer rounded-xl overflow-hidden shadow-md border-4 border-[#0556AF]">
+                    <img src="../assets/images/berita/UEU Get Ready to PKM 2025.png" alt="Berita 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div onclick="openModal('2')" class="w-[320px] h-[320px] xl:w-full xl:h-[600px] cursor-pointer rounded-xl overflow-hidden shadow-md border-4 border-[#0556AF]">
+                    <img src="../assets/images/berita/Syarat & Ketentuan.png" alt="Berita 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="text-center mt-10">
+                <a href="berita-semua.html" class="inline-block bg-white text-[#0556AF] border border-[#0556AF] hover:bg-[#0556AF] hover:text-white transition font-semibold px-6 py-2 rounded-full">
+                    Lihat lainnya &gt;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Popup -->
+    <div id="modal-news" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white max-w-2xl w-full max-h-[90vh] p-6 rounded-xl shadow-lg relative overflow-y-auto">
+            <button onclick="closeModal()" class="text-4xl absolute top-0 right-3 text-red-600 hover:text-red-800 font-medium">&times;</button>
+            <h3 id="modal-title" class="text-2xl font-bold text-[#0556AF] mb-2 pr-6">Judul Berita</h3>
+            <img id="modal-img" src="" alt="Detail Berita" class="w-full h-[350px] lg:h-[600px] object-cover rounded-md mb-4">
+            <p id="modal-desc" class="text-[#0556AF] text-lg text-justify leading-relaxed whitespace-pre-line">
+                Isi lengkap berita akan ditampilkan di sini...
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const beritaData = {
+            '1': {
+                title: 'UEU Get Ready to PKM 2025',
+                img: '../assets/images/berita/UEU Get Ready to PKM 2025.png',
+                desc: `Halo Sobat Unggul! 🙌
+
+                        Apakah kamu siap untuk membawa inovasi dan ide kreatifmu ke ajang Program Kreativitas Mahasiswa (PKM) 2025? 🌟
+
+                        Ini saatnya bagi kita, mahasiswa UEU, untuk unjuk gigi di kancah nasional dan menunjukkan bahwa kita mampu menciptakan karya yang berdaya saing tinggi. Baik kamu yang memiliki minat dalam penelitian, wirausaha, pengabdian masyarakat, hingga teknologi, PKM adalah program terbaik untuk menuangkan kreativitasmu! 💡💼💻
+
+                        Yuk, persiapkan dirimu mulai dari sekarang!
+
+                        Pantau terus informasi mengenai PKM 2025 di Instagram PKM CENTER UEU dan jangan ragu untuk berkonsultasi dengan tim operator PKM.`
+            },
+            '2': {
+                title: 'Syarat dan Ketentuan menjadi Tim PKM UEU 2025',
+                img: '../assets/images/berita/Syarat & Ketentuan.png',
+                desc: `👋Hai Sobat Unggul!👋
+                    Sudah siap untuk berpartisipasi dalam Program Kreativitas Mahasiswa (PKM) 2025?
+                    
+                    Yuk ikuti sosialisasi PKM 2025 yang akan segera dimulai. Di sini Anda akan mendapatkan informasi lengkap tentang PKM, mulai dari cara mendaftar, syarat dan ketentuan, hingga tips dan trik menulis proposal yang menarik dan berkualitas. 😍
+                    
+                    Sosialisasi PKM 2025 akan dilaksanakan pada:
+                    Tanggal: Jumat, 4 Oktober 2024
+                    Waktu: 19.00 - 21.30 WIB
+                    Tempat: Zoom Meeting
+                    Topik: Sosialisasi PKM Join Zoom Meeting https://zoom.us/j/92511760470?pwd=9ahuVeMDsxTS4TBKvoOcNOJuiP8a3n.1
+                    Meeting ID: 925 1176 0470
+                    Passcode: 266110
+                    
+                    Jangan sampai ketinggalan ya Sobat Unggul. Siapkan proposal terbaik Anda. Kami tunggu partisipasi dan karya Anda di PKM 2025!! 🙌✨`
+            }
+        };
+
+        function openModal(id) {
+            const berita = beritaData[id];
+            document.getElementById('modal-title').innerText = berita.title;
+            document.getElementById('modal-img').src = berita.img;
+            document.getElementById('modal-desc').innerText = berita.desc;
+            document.getElementById('modal-news').classList.remove('hidden');
+            document.getElementById('modal-news').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-news').classList.add('hidden');
+            document.getElementById('modal-news').classList.remove('flex');
+        }
+    </script>
+
+    <!-- News Section -->
+    <section id="news" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-left text-[#0556AF] mb-2" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                Kumpulan Berita Terbaru
+            </h2>
+            <p class="text-lg md:text-xl font-medium text-left text-[#0556AF] mb-10">
+                Temukan update terbaru, kegiatan inspiratif, dan kesempatan untuk berprestasi melalui Program Kreativitas Mahasiswa.
+            </p>
+
+            <!-- Grid News -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <!-- Slider utama -->
+                <div class="relative rounded-xl overflow-hidden shadow-md">
+                    <div onclick="location.href='berita-terbaru.html'" id="slider" class="relative w-[320px] h-[320px] xl:w-full xl:h-full overflow-hidden border-4 border-[#0556AF] shadow-lg rounded-xl hover:cursor-pointer">
+                        <div class="slide hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                            <img src="../assets/images/berita/UEU Get Ready to PKM 2025.png" alt="Berita 1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="slide hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                            <img src="../assets/images/berita/Syarat & Ketentuan.png" alt="Berita 2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="slide hidden absolute inset-0 transition-opacity duration-700 ease-in-out">
+                            <img src="../assets/images/berita/COACHING CLINIC PKM UEU 2025.png" alt="Berita 3" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div onclick="location.href='berita-terbaru.html'" class="rounded-xl overflow-hidden shadow-md border-4 border-[#0556AF] hover:cursor-pointer">
+                        <img src="../assets/images/berita/Syarat & Ketentuan.png" alt="Berita 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div onclick="location.href='berita-terbaru.html'" class="rounded-xl overflow-hidden shadow-md border-4 border-[#0556AF] hover:cursor-pointer">
+                        <img src="../assets/images/berita/Sosiallisasi PKM dikti 2025.png" alt="Berita 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div onclick="location.href='berita-terbaru.html'" class="rounded-xl overflow-hidden shadow-md border-4 border-[#0556AF] hover:cursor-pointer">
+                        <img src="../assets/images/berita/Timeline PKM UEU.png" alt="Berita 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div onclick="location.href='berita-terbaru.html'" class="rounded-xl overflow-hidden shadow-md border-4 border-[#0556AF] hover:cursor-pointer">
+                        <img src="../assets/images/berita/Skema PKM UEU 2025.png" alt="Berita 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="text-center mt-10">
+                <a href="berita-terbaru.html" class="inline-block bg-white text-[#0556AF] border border-[#0556AF] hover:bg-[#0556AF] hover:text-white transition font-semibold px-6 py-2 rounded-full">
+                    Lihat lainnya &gt;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Script Slider Berita -->
+    <script>
+        // Slider utama
+        const slides = document.querySelectorAll('#slider .slide');
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.add('hidden');
+                slide.classList.remove('opacity-100');
+                if (i === index) {
+                    slide.classList.remove('hidden');
+                    slide.classList.add('opacity-100');
+                }
+            });
+        }
+
+        function nextSlide() {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }
+
+        showSlide(current);
+        setInterval(nextSlide, 3000);
+
+        // Mini Slider (Berita lainnya)
+        const miniSlides = document.querySelectorAll('#miniSlider .mini-slide');
+        let miniCurrent = 0;
+
+        function showMiniSlide(index) {
+            miniSlides.forEach((slide, i) => {
+                slide.classList.add('hidden');
+                if (i === index || i === index + 1) {
+                    slide.classList.remove('hidden');
+                }
+            });
+        }
+
+        function nextMiniSlide() {
+            miniCurrent = (miniCurrent + 2) % miniSlides.length;
+            showMiniSlide(miniCurrent);
+        }
+
+        showMiniSlide(miniCurrent);
+        setInterval(nextMiniSlide, 3000);
+    </script>
+
+    <!-- Why Join PKM Section -->
+    <section id="about" class="relative py-16 bg-[#0556AF] overflow-hidden">
+        <div class="absolute inset-0 bg-[url('../assets/images/bg-about.png')] bg-cover bg-center opacity-15 pointer-events-none"></div>
+
+        <!-- Konten utama -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 mt-[50px] mb-[50px]">
+            <div class="rounded-3xl p-8 shadow-lg animate-fadeInUp" style="background: linear-gradient(to bottom, white 70%, #FFBA00 100%)">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Grid 1: Text -->
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#0556AF] mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                            Mengapa Harus Ikuti PKM?
+                        </h2>
+                        <p class="text-[#0556AF] text-base md:text-lg mb-6 leading-relaxed text-justify font-semibold">
+                            Mengikuti Program Kreativitas Mahasiswa (PKM) bukan hanya tentang lomba, tapi juga tentang pengembangan diri, pengalaman berharga, dan membangun masa depan. Berikut adalah manfaat yang akan kamu dapatkan:
+                            <ol class="list-decimal list-inside text-base md:text-lg text-[#0556AF] text-left font-semibold mt-4 space-y-2">
+                                <li>
+                                    Mengasah kreativitas dan inovasi
+                                </li>
+                                <li>
+                                    Meningkatkan kemampuan berpikir kritis dan problem solving
+                                </li>
+                                <li>
+                                    Pengalaman kompetisi hingga tingkat nasional (PIMNAS)
+                                </li>
+                                <li>
+                                    Belajar menyusun proposal dan karya ilmiah
+                                </li>
+                                <li>
+                                    Melatih soft skills dalam kerjasama tim, komunikasi, dan <span class="lg:ml-5">kepemimpinan</span>
+                                </li>
+                                <li>
+                                    Kesempatan memperoleh pendanaan dari Dikti atau Universitas
+                                </li>
+                                <li>
+                                    Meningkatkan portofolio dan daya saing di dunia kerja
+                                </li>
+                                <li>
+                                    Memberikan kontribusi nyata bagi masyarakat dan lingkungan
+                                </li>
+                            </ol>
+                        </p>
+                        <a href="about.html" class="inline-block bg-[#0556AF] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#044a96] transition mt-4">
+                            Pelajari lebih lanjut &gt;
+                        </a>
+                    </div>
+
+                    <!-- Grid 2: Image -->
+                    <div class="hidden lg:block">
+                        <img src="../assets/images/Foto ORG/Hero Berita utama.png" alt="Why Join PKM" class="w-full max-w-md mx-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0556AF] text-white py-10">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Judul Tengah -->
+            <div class="text-center mb-8">
+                <h2 class="font-bold text-2xl md:text-3xl uppercase">
+                    PKM CENTER UNIVERSITAS ESA UNGGUL
+                </h2>
+            </div>
+
+            <!-- Konten Utama -->
+            <div class="grid md:grid-cols-2 gap-6 text-md">
+                <!-- Kolom Kiri: Alamat dan Jam -->
+                <div>
+                    <p class="text-xl font-semibold mb-2">Alamat kampus:</p>
+                    <a class="text-lg" href="https://maps.app.goo.gl/WMQ67AVfUrhdaTDt7" target="_blank">
+                        Jl. Arjuna Utara No.9, Duri Kepa, Kec. Kb. Jeruk, Kota<br>
+                        Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510
+                    </a>
+                    <p class="text-xl mt-4">
+                        <span class="font-semibold">Jam layanan:</span><br>
+                        <span class="text-lg">Senin – Jumat, 10.00 – 17.00 WIB</span>
+                    </p>
+                </div>
+
+                <!-- Kolom Kanan: Kontak -->
+                <div class="text-md md:text-right">
+                    <p class="text-xl font-semibold">Email:</p>
+                    <a class="text-lg" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">
+                        operatorpkmueu@esaunggul.ac.id
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Instagram:</p>
+                    <a class="text-lg" href="https://instagram.com/pkm_center_ueu" target="_blank">
+                        @pkm_center_ueu
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Grup Whatsapp PKM UEU:</p>
+                    <a class="text-lg" href="https://chat.whatsapp.com/GIfqmjmHu4hA29R6NwnM54?mode=ac_t" target="_blank">Grup Whatsapp PKM UEU</a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-10 text-center text-lg text-white">
+                <span>&copy; 2025. All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk mengubah halaman berita -->
+    <script>
+        const select = document.getElementById("newsSelect");
+        const wrapper = document.getElementById("selectWrapper");
+
+        // Tambah event untuk open/close icon
+        select.addEventListener("focus", () => {
+            wrapper.classList.add("open");
+        });
+
+        select.addEventListener("blur", () => {
+            wrapper.classList.remove("open");
+        });
+
+        // Event onchange tetap
+        function handleNewsChange() {
+            const selectedValue = document.getElementById("newsSelect").value;
+            window.location.href = selectedValue;
+        }
+    </script>
+
+    <!-- Script untuk Navbar Mobile -->
+    <script>
+        document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+    <!-- Inisialisasi Swiper -->
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 1000, // 1 detik
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Program Kreativitas Mahasiswa 2025 - Wujudkan Ide Kreatifmu!">
+    <meta name="keywords" content="PKM, Program Kreativitas Mahasiswa, PIMNAS, mahasiswa, inovasi, kreativitas">
+    <meta name="author" content="Erik Wijaya - 20211002064 - DKV Universitas Esa Unggul">
+    <meta name="whatsapp" content="083890514361">
+    <meta name="email" content="wijayaerick289@student.esaunggul.ac.id">
+    <title>PKM UEU 2025</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeInUp: 'fadeInUp 1s ease-out both',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tangerine:wght@400;700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+
+        .custom-select-wrapper::after {
+            content: '▼';
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #0556AF;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
+
+        .custom-select-wrapper.open::after {
+            content: '▲';
+        }
+
+        select.custom-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 100%;
+            background-color: white;
+            border: 2px solid #0556AF;
+            color: #0556AF;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 2rem 0.5rem 1rem;
+            border-radius: 9999px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        select.custom-select:focus {
+            outline: none;
+            border-color: #0556AF;
+            box-shadow: 2px #bfdbfe;
+        }
+
+        select.custom-select option {
+            padding: 6px 10px;
+            line-height: 1.8rem;
+            font-weight: medium;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/20 backdrop-blur-md shadow-md relative overflow-hidden">
+        <!-- Background Image dengan opacity -->
+        <div class="absolute inset-0 bg-[url('assets/images/bg-navbar.png')] bg-cover bg-center opacity-15 pointer-events-none"></div>
+
+        <!-- Konten navbar -->
+        <div class="relative z-10 max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+            <div class="flex items-center">
+                <img src="assets/images/logo.png" alt="Logo" class="w-[80px] h-[80px] mr-2" />
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium text-lg text-[#0556AF] bg-white rounded-full shadow-lg px-4 py-1">
+                <a href="index.html" class="hover:font-bold">Beranda</a>
+                <a href="profile.html" class="hover:font-bold">Profil Organisasi</a>
+                <a href="about.html" class="hover:font-bold">Tentang PKM</a>
+                <a href="berita.html" class="hover:font-bold">Berita</a>
+                <a href="galeri.html" class="hover:font-bold active">Galeri</a>
+            </nav>
+            
+            <!-- Button Login -->
+            <div class="hidden md:flex space-x-3">
+                <button class="text-lg text-[#0556AF] bg-white font-medium rounded-full shadow-lg hover:font-bold px-4 py-1" onclick="location.href='login.html';">Masuk</button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" class="md:hidden z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden text-lg bg-white/90 font-medium backdrop-blur px-4 pb-4">
+            <a href="index.html" class="block hover:text-[#0556AF] py-2">Beranda</a>
+            <a href="profile.html" class="block hover:text-[#0556AF] py-2">Profil Organisasi</a>
+            <a href="about.html" class="block hover:text-[#0556AF] py-2">Tentang PKM</a>
+            <a href="berita.html" class="block hover:text-[#0556AF] py-2">Berita</a>
+            <a href="galeri.html" class="block hover:text-[#0556AF] py-2">Galeri</a>
+            <div class="mt-4 space-y-2">
+                <button class="w-full bg-[#0556AF] px-4 py-2 rounded-full text-white font-semibold" onclick="location.href='login.html';">Masuk</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section id="banner" class="relative py-8">
+        <!-- Background dengan overlay -->
+        <div class="absolute inset-0 bg-[#0556AF]">
+            <div class="w-full h-full bg-[url('assets/images/bg-about.png')] bg-cover bg-center opacity-15"></div>
+        </div>
+
+        <!-- Konten -->
+        <div class="relative z-10 max-w-full mx-auto">
+            <h2 id="text-profile" class="text-2xl md:text-5xl font-bold text-white text-center animate-fadeInUp" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                Dokumentasi Kegiatan <br> Program Kreativitas Mahasiswa
+            </h2>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Bar Pencarian & Kategori -->
+            <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 items-center mb-8">
+                <!-- Select Kategori -->
+                <div class="custom-select-wrapper relative max-w-[250px]" id="selectWrapper">
+                    <select id="galeriSelect" onchange="handleDocumentationChange()" class="custom-select">
+                        <option value="galeri.html">Galeri</option>
+                        <option value="galeri-kegiatan.html" selected>Dokumentasi Kegiatan</option>
+                        <option value="galeri-prestasi.html">Prestasi Mahasiswa</option>
+                    </select>
+                </div>
+
+                <!-- Input dan Filter -->
+                <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-stretch justify-end">
+                    <input type="text" placeholder="Telusuri galeri..." id="searchInput" class="flex-1 px-4 py-2 border-2 border-[#0556AF] rounded-full shadow text-[#0556AF] focus:outline-none focus:ring-2 focus:ring-blue-600" />
+                    <button onclick="applyFilter()" class="px-6 py-2 rounded-full bg-white text-[#0556AF] border-2 border-[#0556AF] font-semibold hover:bg-[#0556AF] hover:text-white hover:border-2 hover:border-white transition">
+                        Telusuri
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid News -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 xl:gap-16">
+                <!-- Berita Item -->
+                <div onclick="openModal('1')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <img src="assets/images/dokumentasi/1.png" alt="Dokumentasi 1" class="w-full h-[380px] object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-[#0556AF]">Sosialisasi PKM UEU 2025</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            22 Mei 2025
+                        </p>
+                        <p class="text-sm text-[#0556AF]">
+                            👋Hai Sobat Unggul!👋 Sudah siap untPada hari Jumat, 4 Oktober 2024 kemarin telah diadakan Sosialisasi dan Pengenalan Program Kreativitas Mahasiswa (PKM)...
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal('2')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <img src="assets/images/dokumentasi/2.png" alt="Dokumentasi 2" class="w-full h-[380px] object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-[#0556AF]">Bimbingan Teknis Penguatan Riset dan Program Kreativitas Mahasiswa di Lingkungan LLDIKTI III...</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            22 Mei 2025
+                        </p>
+                        <p class="text-sm text-[#0556AF]">
+                            Halo Sobat Unggul! ✨ Beberapa hari yang lalu, dua...
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal('3')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <img src="assets/images/dokumentasi/3.png" alt="Dokumentasi 3" class="w-full h-[380px] object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-[#0556AF]">BIMTEK PKM CENTER UEU 2024/2025</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            22 Mei 2025
+                        </p>
+                        <p class="text-sm text-[#0556AF]">
+                            Hallo Sobat Unggul✨ 📢 BIMTEK PKM CENTER UEU 2024/2025🚀✨ Mari meningkatkan kualitas proposal dan peluang lolos pendanaan!...
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal('4')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <img src="assets/images/dokumentasi/4.png" alt="Dokumentasi 4" class="w-full h-[380px] object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-[#0556AF]">Training of Trainers (ToT) PKM 2025</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            22 Mei 2025
+                        </p>
+                        <p class="text-sm text-[#0556AF]">
+                            Esa Unggul Sukses Laksanakan Training of Trainers (ToT) PKM 2025 Dalam rangka meningkatkan kapasitas dan kompetensi pendamping Program...
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal('5')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <img src="assets/images/dokumentasi/5.png" alt="Dokumentasi 5" class="w-full h-[380px] object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-[#0556AF]">Sosialisasi PKM 2025</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            22 Mei 2025
+                        </p>
+                        <p class="text-sm text-[#0556AF]">
+                            Universitas Esa Unggul terus mendorong partisipasi aktif mahasiswa dalam Program Kreativitas Mahasiswa (PKM) 2025. Sebagai bagian dari persiapan tersebut, mahasiswa Esa Unggul turut mengikuti...
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal('6')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <img src="assets/images/dokumentasi/6.png" alt="Dokumentasi 6" class="w-full h-[380px] object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-[#0556AF]">Coaching Clinic PKM 2025</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            22 Mei 2025
+                        </p>
+                        <p class="text-sm text-[#0556AF]">
+                            Sebagai bentuk komitmen dalam meningkatkan kualitas proposal Program Kreativitas Mahasiswa (PKM), Universitas Esa Unggul kembali menggelar kegiatan Coaching Clinic PKM...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Popup -->
+    <div id="modal-news" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white max-w-2xl w-full max-h-[90vh] p-6 rounded-xl shadow-lg relative overflow-y-auto">
+            <button onclick="closeModal()" class="text-4xl absolute top-0 right-3 text-red-600 hover:text-red-800 font-medium">&times;</button>
+            <h3 id="modal-title" class="text-2xl font-bold text-[#0556AF] mb-2 pr-6">Judul Berita</h3>
+            <img id="modal-img" src="" alt="Detail Berita" class="w-full h-[350px] lg:h-[600px] object-cover rounded-md mb-4">
+            <p id="modal-desc" class="text-[#0556AF] text-lg text-justify leading-relaxed whitespace-pre-line">
+                Isi lengkap berita akan ditampilkan di sini...
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const beritaData = {
+            '1': {
+                title: 'UEU Get Ready to PKM 2025',
+                img: 'assets/images/dokumentasi/1.png',
+                desc: `Pada hari Jumat, 4 Oktober 2024 kemarin telah diadakan Sosialisasi dan Pengenalan Program Kreativitas Mahasiswa (PKM) Tahun 2025 secara online melalui Zoom Meeting! 👏🥳
+                
+                Dalam sosialisasi tersebut, diawali dengan pengenalan sistem pelaksanaan PKM, pengarahan timeline dan skema, serta ada juga sesi sharing bersama mahasiswa yang pernah lolos pendanaan di PKM tahun sebelumnya, menarik kan?! 🚀💡
+                
+                Berikut beberapa dokumentasi kegiatan tersebut. Segera persiapkan dirimu untuk menempuh perjalanan meraih kesuksesan lewat PKM 2025! ✨
+                
+                Pedoman PKM dapat kalian akses di link berikut yaa bit.ly/PedomanPKM_UEUs`,
+            },
+            '2': {
+                title: 'Bimbingan Teknis Penguatan Riset dan Program Kreativitas Mahasiswa di Lingkungan LLDIKTI III',
+                img: 'assets/images/dokumentasi/2.png',
+                desc: `Halo Sobat Unggul! ✨
+                Beberapa hari yang lalu, dua Mahasiswa Universitas Esa Unggul telah mengikuti Bimbingan Teknis Penguatan Riset dan Program Kreativitas Mahasiswa di Lingkungan LLDIKTI III Tahun 2024 sebagai persiapaan pelaksanaan PKM Tahun 2025! 🚀
+                
+                Kegiatan tersebut dilaksanakan di Universitas Bhayangkara Jakarta Raya pada hari Rabu, 4 Desember 2024 yang diikuti oleh 100 peserta dari 50 Perguruan Tinggi di wilayah LLDIKTI III. Dalam kegiatan ini Universitas Esa Unggul di wakili oleh MuhammadI Ilham Putra Ananda (20240301151) dan Lutfia Kayla Maharhany (20240701125).
+                
+                Kegiatan tersebut mengundang narasumber langsung dari reviewer proposal PKM untuk persiapan PKM pada tahun 2025. Pada sambutan oleh kepala LLDIKTI III, beliau berharap institusi di wilayah LLDIKTI III dapat menyumbangkan banyak proposal yang lolos pendanaan dan banyak dari mahasiswa di wilayah LLDIKTI III yang lolos hingga PIMNAS yang InshaAllah dilaksanakan di Universitas Hasanudin Makasar. 🙌 Pada penghujung kegiatan tersebut, salah satu mahasiswa Universitas Esa Unggul yang bernama Muhammad Ilham Putra Ananda (20240301151) juga mendapatkan reward dari pihak LLDIKTI III karena berhasil menjawab pertanyaan dari pemateri, lho! 🥳
+                
+                Good luck untuk semua mahasiswa Universitas Esa Unggul yang berjuang untuk PKM tahun 2025, ya! Semoga kerja keras kalian membawa hasil yang membanggakan 🔥`,
+            },
+            '3': {
+                title: 'BIMTEK PKM CENTER UEU 2024/2025',
+                img: 'assets/images/dokumentasi/3.png',
+                desc: `tesEsa Unggul Telah Sukses Melaksanakan Bimbingan Teknis (Bimtek) PKM 2025 Universitas Esa Unggul kembali menunjukkan komitmennya dalam mendorong kreativitas dan inovasi mahasiswa melalui pelaksanaan Bimbingan Teknis (Bimtek) Program Kreativitas Mahasiswa (PKM) 2025. Kegiatan ini telah sukses digelar pada:
+                
+                🗓 Sabtu, 21 Desember 2024
+                🕛 Pukul 09.00 - 12.00 WIB
+                📍 Universitas Esa Unggul Jakarta, Gedung A, Ruang 811
+                
+                Kegiatan ini bertujuan untuk meningkatkan kualitas proposal PKM sekaligus memperbesar peluang mahasiswa Esa Unggul untuk lolos pendanaan di ajang PKM nasional. Para peserta mengikuti sesi diskusi interaktif serta bimbingan intensif yang dipandu oleh pemateri berpengalaman.
+                
+                Materi yang diberikan:
+                ✅ Strategi menyusun proposal PKM yang menarik dan sesuai ketentuan
+                ✅ Tips dan trik menghadapi proses seleksi pendanaan
+                ✅ Kolaborasi ide kreatif untuk menghasilkan karya inovatif
+                
+                Narasumber Inspiratif:
+                👤 Zatmiko Setiawan, S.T., M.M (Pengenalan PKM dan Teknik Penulisan Proposal)
+                👤 Ni Made Oki Handayani – Penerima Hibah PKM-K 2024
+                👤 Rikza Khairul Fajri – Penerima Hibah PKM-RE 2024
+                👤 Grace Gloria M – Penerima Hibah PKM-RSH 2024
+                
+                Bimtek ini menjadi momen penting, khususnya bagi mahasiswa penerima beasiswa angkatan 2023 dan 2024 yang diwajibkan mengikuti kegiatan ini. Antusiasme peserta terlihat jelas selama sesi berlangsung, menunjukkan semangat besar untuk terus berkarya dan berinovasi.
+                
+                Dengan terlaksananya kegiatan ini, diharapkan semakin banyak mahasiswa Esa Unggul yang siap bersaing, menghasilkan karya terbaik, dan mengharumkan nama universitas di kancah nasional.
+                
+                Mari terus semangat berinovasi, berkarya, dan mengukir prestasi!`,
+            },
+            '4': {
+                title: 'Training of Trainers (ToT) PKM 2025',
+                img: 'assets/images/dokumentasi/4.png',
+                desc: `Esa Unggul Sukses Laksanakan Training of Trainers (ToT) PKM 2025 Dalam rangka meningkatkan kapasitas dan kompetensi pendamping Program Kreativitas Mahasiswa (PKM), Universitas Esa Unggul telah sukses melaksanakan kegiatan Training of Trainers (ToT) PKM 2025.
+                
+                Kegiatan ini berlangsung selama dua hari pada:
+                
+                🗓 Senin - Selasa, 17 - 18 Februari 2025
+                📍 The Rizen Hotel, Cisarua, Bogor
+                
+                ToT ini menjadi upaya strategis universitas dalam menyiapkan para dosen dan tim operator PKM agar memiliki pemahaman yang komprehensif terkait pelaksanaan PKM, mulai dari proses penyusunan proposal, pendampingan, hingga persiapan menghadapi monitoring dan evaluasi di tingkat nasional.
+                
+                Tujuan Kegiatan:
+                ✅ Meningkatkan kompetensi pendamping PKM di lingkungan Universitas Esa Unggul
+                ✅ Menyamakan persepsi terkait kebijakan dan mekanisme PKM terbaru
+                ✅ Mempersiapkan pendamping yang mampu membina mahasiswa secara optimal dalam menghasilkan proposal berkualitas dan inovatif
+                
+                Materi yang Dibahas:
+                Sosialisasi Kebijakan dan Skema PKM 2025 Strategi Efektif Pendampingan Proposal PKM
+                Simulasi Penilaian dan Evaluasi Proposal
+                Sharing Best Practices dari Pendamping dan Mahasiswa Berprestasi
+                
+                Kegiatan ini diikuti oleh para dosen, tim operator PKM, serta perwakilan mahasiswa yang telah berpengalaman mengikuti PKM. Dengan suasana kondusif di The Rizen Hotel Cisarua, seluruh peserta dapat berdiskusi aktif, berbagi pengalaman, serta membangun sinergi yang lebih kuat untuk menghadapi kompetisi PKM di tingkat nasional.
+                
+                Melalui pelaksanaan ToT ini, Universitas Esa Unggul semakin optimis dapat mencetak lebih banyak mahasiswa kreatif, inovatif, dan berprestasi dalam ajang PKM 2025.
+                
+                Bersama PKM Esa Unggul, kita wujudkan mahasiswa unggul, kreatif, dan siap bersaing di tingkat nasional!`,
+            },
+            '5': {
+                title: 'Sosialisasi PKM 2025',
+                img: 'assets/images/dokumentasi/5.png',
+                desc: `Universitas Esa Unggul terus mendorong partisipasi aktif mahasiswa dalam Program Kreativitas Mahasiswa (PKM) 2025. Sebagai bagian dari persiapan tersebut, mahasiswa Esa Unggul turut mengikuti Sosialisasi PKM 2025 yang diselenggarakan secara nasional oleh KemendiktiSaintek.
+                
+                Kegiatan ini dilaksanakan pada:
+                
+                🗓 Senin, 5 Mei 2025
+                🕗 Pukul 08.00 - 12.00 WIB
+                📍 Melalui kanal Youtube @kemendiktisaintek
+                
+                Sosialisasi ini menjadi momen penting bagi seluruh mahasiswa, khususnya penerima beasiswa UEU yang diwajibkan untuk mengikuti kegiatan ini dan berpartisipasi dalam PKM 2025.
+                
+                Apa saja yang dibahas?
+                ✅ Informasi lengkap tentang PKM 2025
+                ✅ Panduan pendaftaran PKM
+                ✅ Syarat dan ketentuan mengikuti PKM
+                ✅ Tips dan trik menyusun proposal yang berkualitas dan berpeluang lolos pendanaan
+
+                Kegiatan ini diharapkan dapat meningkatkan pemahaman dan kesiapan mahasiswa Esa Unggul dalam mengikuti PKM 2025. Dengan informasi yang komprehensif, diharapkan semakin banyak proposal kreatif dan inovatif yang lahir dari mahasiswa Esa Unggul, siap bersaing di tingkat nasional.
+
+                Siapkan ide terbaik, susun proposal berkualitas, dan buktikan bahwa mahasiswa Esa Unggul mampu bersaing dan berprestasi di ajang PKM 2025!`,
+            },
+            '6': {
+                title: 'Coaching Clinic PKM 2025',
+                img: 'assets/images/dokumentasi/6.png',
+                desc: `Sebagai bentuk komitmen dalam meningkatkan kualitas proposal Program Kreativitas Mahasiswa (PKM), Universitas Esa Unggul kembali menggelar kegiatan Coaching Clinic PKM 2025. Kegiatan ini merupakan salah satu tahapan penting untuk memberikan pendampingan dan arahan teknis kepada mahasiswa dalam proses penyusunan proposal PKM.
+                
+                Coaching Clinic ini dilaksanakan secara daring agar dapat diakses oleh seluruh mahasiswa dari berbagai lokasi.
+                
+                🗓 Kamis, 15 Mei 2025
+                🕖 Pukul 19.00 - Selesai WIB
+                💻 Melalui Zoom Meeting
+                
+                🔗 Link Zoom:
+                https://zoom.us/j/93669683282?pwd=bR2ko5lik6V7SAaZ07YpRChsMcfj3f.1
+                
+                Meeting ID: 936 6968 3283
+                Passcode: 978795
+                
+                Apa yang dibahas?
+                ✅ Review proposal PKM secara langsung
+                ✅ Konsultasi ide dan topik PKM
+                ✅ Tips penyusunan proposal agar sesuai ketentuan
+                ✅ Tanya jawab bersama pemateri
+                
+                Melalui kegiatan ini, mahasiswa mendapat kesempatan untuk mematangkan ide serta memperbaiki proposal sebelum proses pengajuan. Antusiasme dan partisipasi aktif mahasiswa menjadi kunci utama dalam meningkatkan peluang lolos pendanaan PKM 2024.
+                
+                Jangan lewatkan kesempatan berharga ini untuk meningkatkan kualitas proposal dan raih prestasi di ajang PKM nasional!`,
+            }
+        };
+
+        function openModal(id) {
+            const berita = beritaData[id];
+            document.getElementById('modal-title').innerText = berita.title;
+            document.getElementById('modal-img').src = berita.img;
+            document.getElementById('modal-desc').innerText = berita.desc;
+            document.getElementById('modal-news').classList.remove('hidden');
+            document.getElementById('modal-news').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-news').classList.add('hidden');
+            document.getElementById('modal-news').classList.remove('flex');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-[#0556AF] text-white py-10">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Judul Tengah -->
+            <div class="text-center mb-8">
+                <h2 class="font-bold text-2xl md:text-3xl uppercase">
+                    PKM CENTER UNIVERSITAS ESA UNGGUL
+                </h2>
+            </div>
+
+            <!-- Konten Utama -->
+            <div class="grid md:grid-cols-2 gap-6 text-md">
+                <!-- Kolom Kiri: Alamat dan Jam -->
+                <div>
+                    <p class="text-xl font-semibold mb-2">Alamat kampus:</p>
+                    <a class="text-lg" href="https://maps.app.goo.gl/WMQ67AVfUrhdaTDt7" target="_blank">
+                        Jl. Arjuna Utara No.9, Duri Kepa, Kec. Kb. Jeruk, Kota<br>
+                        Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510
+                    </a>
+                    <p class="text-xl mt-4">
+                        <span class="font-semibold">Jam layanan:</span><br>
+                        <span class="text-lg">Senin – Jumat, 10.00 – 17.00 WIB</span>
+                    </p>
+                </div>
+
+                <!-- Kolom Kanan: Kontak -->
+                <div class="text-md md:text-right">
+                    <p class="text-xl font-semibold">Email:</p>
+                    <a class="text-lg" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">
+                        operatorpkmueu@esaunggul.ac.id
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Instagram:</p>
+                    <a class="text-lg" href="https://instagram.com/pkm_center_ueu" target="_blank">
+                        @pkm_center_ueu
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Grup Whatsapp PKM UEU:</p>
+                    <a class="text-lg" href="https://chat.whatsapp.com/GIfqmjmHu4hA29R6NwnM54?mode=ac_t" target="_blank">Grup Whatsapp PKM UEU</a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-10 text-center text-lg text-white">
+                <span>&copy; 2025. All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk mengubah halaman berita -->
+    <script>
+        const select = document.getElementById("galeriSelect");
+        const wrapper = document.getElementById("selectWrapper");
+
+        // Tambah event untuk open/close icon
+        select.addEventListener("focus", () => {
+            wrapper.classList.add("open");
+        });
+
+        select.addEventListener("blur", () => {
+            wrapper.classList.remove("open");
+        });
+
+        // Event onchange tetap
+        function handleDocumentationChange() {
+            const selectedValue = document.getElementById("galeriSelect").value;
+            window.location.href = selectedValue;
+        }
+    </script>
+
+    <!-- Script untuk Navbar Mobile -->
+    <script>
+        document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+    <!-- Inisialisasi Swiper -->
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 1000, // 1 detik
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+</body>
+
+</html>

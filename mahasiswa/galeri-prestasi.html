@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Program Kreativitas Mahasiswa 2025 - Wujudkan Ide Kreatifmu!">
+    <meta name="keywords" content="PKM, Program Kreativitas Mahasiswa, PIMNAS, mahasiswa, inovasi, kreativitas">
+    <meta name="author" content="Erik Wijaya - 20211002064 - DKV Universitas Esa Unggul">
+    <meta name="whatsapp" content="083890514361">
+    <meta name="email" content="wijayaerick289@student.esaunggul.ac.id">
+    <title>PKM UEU 2025</title>
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeInUp: 'fadeInUp 1s ease-out both',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tangerine:wght@400;700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+
+        .custom-select-wrapper::after {
+            content: '▼';
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #0556AF;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
+
+        .custom-select-wrapper.open::after {
+            content: '▲';
+        }
+
+        select.custom-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 100%;
+            background-color: white;
+            border: 2px solid #0556AF;
+            color: #0556AF;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 2rem 0.5rem 1rem;
+            border-radius: 9999px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        select.custom-select:focus {
+            outline: none;
+            border-color: #0556AF;
+            box-shadow: 2px #bfdbfe;
+        }
+
+        select.custom-select option {
+            padding: 6px 10px;
+            line-height: 1.8rem;
+            font-weight: medium;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white">
+    
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/20 backdrop-blur-md shadow-md relative overflow-hidden">
+        <!-- Background Image dengan opacity -->
+        <div class="absolute inset-0 bg-[url('../assets/images/bg-navbar.png')] bg-cover bg-center opacity-15 pointer-events-none"></div>
+
+        <!-- Konten navbar -->
+        <div class="relative z-10 max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+            <div class="flex items-center">
+                <img src="../assets/images/logo.png" alt="Logo" class="w-[80px] h-[80px] mr-2" />
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium text-lg text-[#0556AF] bg-white rounded-full shadow-lg px-4 py-1">
+                <a href="index.html" class="hover:font-bold">Beranda</a>
+                <a href="profile.html" class="hover:font-bold">Profil Organisasi</a>
+                <a href="about.html" class="hover:font-bold">Tentang PKM</a>
+                <a href="berita.html" class="hover:font-bold">Berita</a>
+                <a href="galeri.html" class="hover:font-bold active">Galeri</a>
+                <a href="daftar-pengajuan.html" class="hover:font-bold">Pengajuan Usulan</a>
+            </nav>
+            
+            <!-- Button Login -->
+            <div class="hidden md:flex space-x-3">
+                <button class="text-lg text-[#0556AF] bg-white font-medium rounded-full shadow-lg hover:font-bold px-4 py-1" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" class="md:hidden z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden text-lg bg-white/90 font-medium backdrop-blur px-4 pb-4">
+            <a href="index.html" class="block hover:text-[#0556AF] py-2">Beranda</a>
+            <a href="profile.html" class="block hover:text-[#0556AF] py-2">Profil Organisasi</a>
+            <a href="about.html" class="block hover:text-[#0556AF] py-2">Tentang PKM</a>
+            <a href="berita.html" class="block hover:text-[#0556AF] py-2">Berita</a>
+            <a href="galeri.html" class="block hover:text-[#0556AF] py-2">Galeri</a>
+            <a href="daftar-pengajuan.html" class="block hover:text-[#0556AF] py-2">Pengajuan Usulan</a>
+            <div class="mt-4 space-y-2">
+                <button class="w-full bg-[#0556AF] px-4 py-2 rounded-full text-white font-semibold" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <section id="banner" class="relative py-8">
+        <!-- Background dengan overlay -->
+        <div class="absolute inset-0 bg-[#0556AF]">
+            <div class="w-full h-full bg-[url('../assets/images/bg-about.png')] bg-cover bg-center opacity-15"></div>
+        </div>
+
+        <!-- Konten -->
+        <div class="relative z-10 max-w-full mx-auto">
+            <h2 id="text-profile" class="text-2xl md:text-5xl font-bold text-white text-center animate-fadeInUp" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                Dokumentasi Kegiatan <br> Program Kreativitas Mahasiswa
+            </h2>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Bar Pencarian & Kategori -->
+            <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 items-center mb-8">
+                <!-- Select Kategori -->
+                <div class="custom-select-wrapper relative max-w-[250px]" id="selectWrapper">
+                    <select id="galeriSelect" onchange="handleDocumentationChange()" class="custom-select">
+                        <option value="galeri.html">Galeri</option>
+                        <option value="galeri-kegiatan.html">Dokumentasi Kegiatan</option>
+                        <option value="galeri-prestasi.html" selected>Prestasi Mahasiswa</option>
+                    </select>
+                </div>
+
+                <!-- Input dan Filter -->
+                <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 items-stretch justify-end">
+                    <input type="text" placeholder="Telusuri galeri..." id="searchInput" class="flex-1 px-4 py-2 border-2 border-[#0556AF] rounded-full shadow text-[#0556AF] focus:outline-none focus:ring-2 focus:ring-blue-600" />
+                    <button onclick="applyFilter()" class="px-6 py-2 rounded-full bg-white text-[#0556AF] border-2 border-[#0556AF] font-semibold hover:bg-[#0556AF] hover:text-white hover:border-2 hover:border-white transition">
+                        Telusuri
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid News -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 xl:gap-16">
+                <!-- Berita Item -->
+                <div onclick="openModal('1')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <!-- Image wrapper with bg-yellow -->
+                    <div class="bg-yellow-400 transition-all duration-300 group-hover:bg-white">
+                        <img src="../assets/images/Foto ORG/Testi foto 1.png" alt="Meishe Agatha" class="w-full object-cover transition-all duration-300" />
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="text-2xl font-semibold text-[#0556AF]">Meishe Agatha</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            2025
+                        </p>
+                        <p class="text-lg text-white bg-[#0556AF] rounded-lg p-2 mt-2">
+                            Peraih Insentif <br>PKM-AI
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal('2')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <!-- Image wrapper with bg-yellow -->
+                    <div class="bg-yellow-400 transition-all duration-300 group-hover:bg-white">
+                        <img src="../assets/images/Foto ORG/Testi foto 2.png" alt="Felicia" class="w-full object-cover transition-all duration-300" />
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="text-2xl font-semibold text-[#0556AF]">Felicia</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            2025
+                        </p>
+                        <p class="text-lg text-white bg-[#0556AF] rounded-lg p-2 mt-2">
+                            Peraih Pendanaan <br> PKM-PM
+                        </p>
+                    </div>
+                </div>
+                
+                <div onclick="openModal('3')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <!-- Image wrapper with bg-yellow -->
+                    <div class="bg-yellow-400 transition-all duration-300 group-hover:bg-white">
+                        <img src="../assets/images/Foto ORG/Testi foto 3.png" alt="Bella Monica" class="w-full object-cover transition-all duration-300" />
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="text-2xl font-semibold text-[#0556AF]">Bella Monica</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            2025
+                        </p>
+                        <p class="text-lg text-white bg-[#0556AF] rounded-lg p-2 mt-2">
+                            Peraih Insentif <br>PKM-RSH
+                        </p>
+                    </div>
+                </div>
+                
+                <div onclick="openModal('4')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <!-- Image wrapper with bg-yellow -->
+                    <div class="bg-yellow-400 transition-all duration-300 group-hover:bg-white">
+                        <img src="../assets/images/Foto ORG/Testi foto 4.png" alt="Viandra Adelia" class="w-full object-cover transition-all duration-300" />
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="text-2xl font-semibold text-[#0556AF]">Viandra Adelia</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            2025
+                        </p>
+                        <p class="text-lg text-white bg-[#0556AF] rounded-lg p-2 mt-2">
+                            Peraih Insentif <br>PKM-AI
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal('5')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <!-- Image wrapper with bg-yellow -->
+                    <div class="bg-yellow-400 transition-all duration-300 group-hover:bg-white">
+                        <img src="../assets/images/Foto ORG/Testi foto 5.png" alt="Ahmad Goriri" class="w-full object-cover transition-all duration-300" />
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="text-2xl font-semibold text-[#0556AF]">Ahmad Goriri</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            2025
+                        </p>
+                        <p class="text-lg text-white bg-[#0556AF] rounded-lg p-2 mt-2">
+                            Peraih Insentif <br>PKM-GFT
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal('6')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <!-- Image wrapper with bg-yellow -->
+                    <div class="bg-yellow-400 transition-all duration-300 group-hover:bg-white">
+                        <img src="../assets/images/Foto ORG/Testi foto 6.png" alt="Muhamad Rifqi" class="w-full object-cover transition-all duration-300" />
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="text-2xl font-semibold text-[#0556AF]">Muhamad Rifqi</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            2025
+                        </p>
+                        <p class="text-lg text-white bg-[#0556AF] rounded-lg p-2 mt-2">
+                            Peraih Insentif <br>PKM-K
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal('7')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <!-- Image wrapper with bg-yellow -->
+                    <div class="bg-yellow-400 transition-all duration-300 group-hover:bg-white">
+                        <img src="../assets/images/Foto ORG/Testi foto 7.png" alt="Fadhil Muh" class="w-full object-cover transition-all duration-300" />
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="text-2xl font-semibold text-[#0556AF]">Fadhil Muh</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            2025
+                        </p>
+                        <p class="text-lg text-white bg-[#0556AF] rounded-lg p-2 mt-2">
+                            Peraih Insentif <br>PKM-AI
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="openModal('8')" class="cursor-pointer bg-white shadow-md rounded-md overflow-hidden transition hover:scale-105">
+                    <!-- Image wrapper with bg-yellow -->
+                    <div class="bg-yellow-400 transition-all duration-300 group-hover:bg-white">
+                        <img src="../assets/images/Foto ORG/Testi foto 8.png" alt="Ratu Aulia" class="w-full object-cover transition-all duration-300" />
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="text-2xl font-semibold text-[#0556AF]">Ratu Aulia</h3>
+                        <p class="text-sm text-[#0556AF]">
+                            2025
+                        </p>
+                        <p class="text-lg text-white bg-[#0556AF] rounded-lg p-2 mt-2">
+                            Peraih Insentif <br>PKM-K
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Popup -->
+    <div id="modal-news" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white max-w-2xl w-full max-h-[90vh] p-6 rounded-xl shadow-lg relative overflow-y-auto">
+            <button onclick="closeModal()" class="text-4xl absolute top-0 right-3 text-red-600 hover:text-red-800 font-medium">&times;</button>
+            <div id="modal-title" class="text-2xl font-bold text-[#0556AF] m-0 p-0">Judul Berita</div>
+            <p id="modal-jurusan" class="text-lg font-bold text-[#0556AF] mb-0">Jurusan</p>
+            <p id="modal-bidang" class="text-lg font-medium text-[#0556AF] mb-0">Bidang PKM</p>
+            <p id="modal-year" class="text-lg font-medium text-[#0556AF] mb-2">Tahun PKM</p>
+            <img id="modal-img" src="" alt="Detail Berita" class="w-full bg-yellow-400 object-cover rounded-md">
+            <p id="modal-desc" class="text-[#0556AF] text-lg text-justify leading-relaxed whitespace-pre-line mt-2">
+                Isi lengkap berita akan ditampilkan di sini...
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const beritaData = {
+            '1': {
+                title: 'Meishe Agatha',
+                img: '../assets/images/Foto ORG/Testi foto 1.png',
+                year: `2025`,
+                jurusan: 'Psikologi',
+                bidang: 'Peraih Insentif PKM-AI',
+                desc: `"Saya tidak pernah menyangka, dari sekadar menulis artikel ilmiah, saya bisa meraih insentif PKM-AI dan membuktikan bahwa mahasiswa Esa Unggul mampu bersaing di tingkat nasional. Awalnya saya merasa ragu dan minder, tapi dengan bimbingan dosen dan semangat belajar, saya berhasil melewati prosesnya. Pengalaman ini mengajarkan saya bahwa keberanian untuk mencoba jauh lebih penting daripada sekadar merasa siap. PKM-AI bukan hanya soal insentif, tapi tentang membuka peluang dan membangun kepercayaan diri sebagai mahasiswa unggul."`,
+            },
+            '2': {
+                title: 'Felicia',
+                img: '../assets/images/Foto ORG/Testi foto 2.png',
+                year: `2025`,
+                jurusan: 'PGSD',
+                bidang: 'Peraih Pendanaan PKM-PM',
+                desc: `"Melalui PKM-PM, saya belajar bahwa dampak nyata untuk masyarakat bisa dimulai dari langkah kecil yang kita lakukan sebagai mahasiswa. Program ini bukan hanya tentang lomba atau proposal, tapi tentang bagaimana ide sederhana bisa memberi manfaat langsung bagi masyarakat sekitar. Saat tim kami berhasil mendapatkan insentif PKM-PM, saya sadar bahwa ilmu yang kami pelajari di kampus bisa benar-benar berguna dan membawa perubahan. Ini pengalaman yang tidak hanya memperkaya pengetahuan, tapi juga membangun empati dan rasa tanggung jawab sebagai generasi muda."`,
+            },
+            '3': {
+                title: 'Bella Monica',
+                img: '../assets/images/Foto ORG/Testi foto 3.png',
+                year: `2025`,
+                jurusan: 'Desain Komunikasi Visual',
+                bidang: 'Peraih Insentif PKM-RSH',
+                desc: `"PKM-RSH membuka mata saya bahwa riset di bidang sosial dan humaniora punya peran besar dalam memahami permasalahan masyarakat dan mencari solusinya. Lewat program ini, saya belajar menggali data, menganalisis isu sosial, dan menyusun rekomendasi yang berdampak. Saat dinyatakan lolos dan mendapat insentif PKM-RSH, saya semakin yakin bahwa penelitian bukan hanya milik mahasiswa eksakta, tapi juga untuk kami yang ingin membawa perubahan lewat kajian sosial. Ini bukan sekadar prestasi, tapi wujud kontribusi nyata sebagai mahasiswa Esa Unggul."`,
+            },
+            '4': {
+                title: 'Viandra Adelia',
+                img: '../assets/images/Foto ORG/Testi foto 4.png',
+                year: `2025`,
+                jurusan: 'Pendidikan Bahasa Inggris',
+                bidang: 'Peraih Insentif PKM-AI',
+                desc: `Mengikuti PKM-AI adalah pengalaman yang sangat berharga bagi saya. Proses penulisan artikel ilmiah melatih kemampuan berpikir kritis, riset, dan komunikasi akademik. Dukungan dari dosen pembimbing serta tim PKM kampus sangat membantu hingga akhirnya artikel saya berhasil lolos dan mendapatkan insentif dari Kemendikbudristek. Semoga pengalaman ini bisa memotivasi teman-teman lain untuk ikut berkontribusi lewat karya ilmiah.`,
+            },
+            '5': {
+                title: 'Ahmad Goriri',
+                img: '../assets/images/Foto ORG/Testi foto 5.png',
+                year: `2025`,
+                jurusan: 'Desain Komunikasi Visual',
+                bidang: 'Peraih Insentif PKM-GFT',
+                desc: `"Melalui PKM-GFT, saya belajar bahwa gagasan yang awalnya hanya ada di kepala bisa menjadi karya tertulis yang dihargai dan diakui. Program ini mengajarkan saya untuk berani menuangkan ide-ide futuristik yang mungkin belum banyak dipikirkan orang, tapi punya potensi besar untuk masa depan. Saat gagasan saya lolos dan mendapatkan insentif PKM-GFT, saya sadar bahwa inovasi selalu dimulai dari keberanian untuk bermimpi besar dan berpikir di luar batas. PKM-GFT memberi saya ruang untuk itu, sekaligus membangun kepercayaan diri sebagai mahasiswa Esa Unggul."`,
+            },
+            '6': {
+                title: 'Muhamad Rifqi',
+                img: '../assets/images/Foto ORG/Testi foto 6.png',
+                year: `2025`,
+                jurusan: 'Hubungan Masyarakat',
+                bidang: 'Peraih Insentif PKM-K',
+                desc: `"PKM-K adalah titik awal saya membuktikan bahwa ide bisnis mahasiswa bisa berkembang menjadi sesuatu yang nyata dan bermanfaat. Lewat program ini, saya tidak hanya belajar bagaimana membuat proposal, tapi juga bagaimana mengelola usaha, menghadapi tantangan pasar, dan menciptakan produk yang inovatif. Saat usaha kami mendapatkan insentif PKM-K, saya sadar bahwa kewirausahaan bukan hanya soal keuntungan, tapi juga soal keberanian mengambil peluang, belajar dari kegagalan, dan membawa nama baik Esa Unggul sebagai kampus yang melahirkan wirausahawan muda."`,
+            },
+            '7': {
+                title: 'Fadhil Muh',
+                img: '../assets/images/Foto ORG/Testi foto 7.png',
+                year: `2025`,
+                jurusan: 'Desain Komunikasi Visual',
+                bidang: 'Peraih Insentif PKM-AI',
+                desc: `"PKM-AI menjadi pengalaman yang membuka wawasan saya tentang pentingnya menulis dan mempublikasikan ide-ide akademis. Awalnya saya merasa menulis artikel ilmiah itu rumit, tapi bimbingan dari dosen dan tim PKM membuat semuanya terasa lebih terarah. Ketika artikel saya akhirnya lolos dan mendapat insentif, saya semakin yakin bahwa setiap mahasiswa memiliki kesempatan yang sama untuk berkontribusi dalam dunia akademik. PKM-AI membuktikan bahwa tulisan sederhana bisa menjadi awal dari perubahan besar."`,
+            },
+            '8': {
+                title: 'Ratu Aulia',
+                img: '../assets/images/Foto ORG/Testi foto 8.png',
+                year: `2025`,
+                jurusan: 'Desain Interior',
+                bidang: 'Peraih Insentif PKM-K',
+                desc: `"PKM-AI menjadi pengalaman yang membuka wawasan saya tentang pentingnya menulis dan mempublikasikan ide-ide akademis. Awalnya saya merasa menulis artikel ilmiah itu rumit, tapi bimbingan dari dosen dan tim PKM membuat semuanya terasa lebih terarah. Ketika artikel saya akhirnya lolos dan mendapat insentif, saya semakin yakin bahwa setiap mahasiswa memiliki kesempatan yang sama untuk berkontribusi dalam dunia akademik. PKM-AI membuktikan bahwa tulisan sederhana bisa menjadi awal dari perubahan besar."`,
+            }
+        };
+
+        function openModal(id) {
+            const berita = beritaData[id];
+            document.getElementById('modal-title').innerText = berita.title;
+            document.getElementById('modal-img').src = berita.img;
+            document.getElementById('modal-year').innerText = berita.year;
+            document.getElementById('modal-jurusan').innerText = berita.jurusan;
+            document.getElementById('modal-bidang').innerText = berita.bidang;
+            document.getElementById('modal-desc').innerText = berita.desc;
+            document.getElementById('modal-news').classList.remove('hidden');
+            document.getElementById('modal-news').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-news').classList.add('hidden');
+            document.getElementById('modal-news').classList.remove('flex');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-[#0556AF] text-white py-10">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Judul Tengah -->
+            <div class="text-center mb-8">
+                <h2 class="font-bold text-2xl md:text-3xl uppercase">
+                    PKM CENTER UNIVERSITAS ESA UNGGUL
+                </h2>
+            </div>
+
+            <!-- Konten Utama -->
+            <div class="grid md:grid-cols-2 gap-6 text-md">
+                <!-- Kolom Kiri: Alamat dan Jam -->
+                <div>
+                    <p class="text-xl font-semibold mb-2">Alamat kampus:</p>
+                    <a class="text-lg" href="https://maps.app.goo.gl/WMQ67AVfUrhdaTDt7" target="_blank">
+                        Jl. Arjuna Utara No.9, Duri Kepa, Kec. Kb. Jeruk, Kota<br>
+                        Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510
+                    </a>
+                    <p class="text-xl mt-4">
+                        <span class="font-semibold">Jam layanan:</span><br>
+                        <span class="text-lg">Senin – Jumat, 10.00 – 17.00 WIB</span>
+                    </p>
+                </div>
+
+                <!-- Kolom Kanan: Kontak -->
+                <div class="text-md md:text-right">
+                    <p class="text-xl font-semibold">Email:</p>
+                    <a class="text-lg" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">
+                        operatorpkmueu@esaunggul.ac.id
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Instagram:</p>
+                    <a class="text-lg" href="https://instagram.com/pkm_center_ueu" target="_blank">
+                        @pkm_center_ueu
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Grup Whatsapp PKM UEU:</p>
+                    <a class="text-lg" href="https://chat.whatsapp.com/GIfqmjmHu4hA29R6NwnM54?mode=ac_t" target="_blank">Grup Whatsapp PKM UEU</a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-10 text-center text-lg text-white">
+                <span>&copy; 2025. All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk mengubah halaman berita -->
+    <script>
+        const select = document.getElementById("galeriSelect");
+        const wrapper = document.getElementById("selectWrapper");
+
+        // Tambah event untuk open/close icon
+        select.addEventListener("focus", () => {
+            wrapper.classList.add("open");
+        });
+
+        select.addEventListener("blur", () => {
+            wrapper.classList.remove("open");
+        });
+
+        // Event onchange tetap
+        function handleDocumentationChange() {
+            const selectedValue = document.getElementById("galeriSelect").value;
+            window.location.href = selectedValue;
+        }
+    </script>
+
+    <!-- Script untuk Navbar Mobile -->
+    <script>
+        document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+    <!-- Inisialisasi Swiper -->
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 1000, // 1 detik
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+</body>
+
+</html>

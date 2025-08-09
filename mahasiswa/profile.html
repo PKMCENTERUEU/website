@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Program Kreativitas Mahasiswa 2025 - Wujudkan Ide Kreatifmu!">
+    <meta name="keywords" content="PKM, Program Kreativitas Mahasiswa, PIMNAS, mahasiswa, inovasi, kreativitas">
+    <meta name="author" content="Erik Wijaya - 20211002064 - DKV Universitas Esa Unggul">
+    <meta name="whatsapp" content="083890514361">
+    <meta name="email" content="wijayaerick289@student.esaunggul.ac.id">
+    <title>PKM UEU 2025</title>
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeInUp: 'fadeInUp 1s ease-out both',
+                        popup: 'popup 1s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                        popup: {
+                            '0%': { transform: 'scale(0.5)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tangerine:wght@400;700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .active {
+            font-weight: bold;
+        }
+
+        /* Delay untuk urutan */
+        #img-profile {
+            animation-delay: 0s;
+            animation-duration: .5s;
+        }
+
+        #text-profile {
+            animation-delay: .5s;
+            animation-duration: .5s;
+        }
+
+        #content-program-kreativitas {
+            animation-delay: 1s;
+            animation-duration: .5s;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white">
+    
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/20 backdrop-blur-md shadow-md relative overflow-hidden">
+        <!-- Background Image dengan opacity -->
+        <div class="absolute inset-0 bg-[url('../assets/images/bg-navbar.png')] bg-cover bg-center opacity-15 pointer-events-none"></div>
+
+        <!-- Konten navbar -->
+        <div class="relative z-10 max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+            <div class="flex items-center">
+                <img src="../assets/images/logo.png" alt="Logo" class="w-[80px] h-[80px] mr-2" />
+            </div>
+            <nav class="hidden md:flex space-x-6 font-medium text-lg text-[#0556AF] bg-white rounded-full shadow-lg px-4 py-1">
+                <a href="index.html" class="hover:font-bold active">Beranda</a>
+                <a href="profile.html" class="hover:font-bold">Profil Organisasi</a>
+                <a href="about.html" class="hover:font-bold">Tentang PKM</a>
+                <a href="berita.html" class="hover:font-bold">Berita</a>
+                <a href="galeri.html" class="hover:font-bold">Galeri</a>
+                <a href="daftar-pengajuan.html" class="hover:font-bold">Pengajuan Usulan</a>
+            </nav>
+            
+            <!-- Button Login -->
+            <div class="hidden md:flex space-x-3">
+                <button class="text-lg text-[#0556AF] bg-white font-medium rounded-full shadow-lg hover:font-bold px-4 py-1" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" class="md:hidden z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden text-lg bg-white/90 font-medium backdrop-blur px-4 pb-4">
+            <a href="index.html" class="block hover:text-[#0556AF] py-2">Beranda</a>
+            <a href="profile.html" class="block hover:text-[#0556AF] py-2">Profil Organisasi</a>
+            <a href="about.html" class="block hover:text-[#0556AF] py-2">Tentang PKM</a>
+            <a href="berita.html" class="block hover:text-[#0556AF] py-2">Berita</a>
+            <a href="galeri.html" class="block hover:text-[#0556AF] py-2">Galeri</a>
+            <a href="daftar-pengajuan.html" class="block hover:text-[#0556AF] py-2">Pengajuan Usulan</a>
+            <div class="mt-4 space-y-2">
+                <button class="w-full bg-[#0556AF] px-4 py-2 rounded-full text-white font-semibold" onclick="location.href='../index.html';">Keluar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section id="profile" class="relative py-16 mt-[-100px]">
+        <!-- Background dengan overlay -->
+        <div class="absolute inset-0 bg-[#0556AF]">
+            <div class="w-full h-full bg-[url('../assets/images/bg-about.png')] bg-cover bg-center opacity-15"></div>
+        </div>
+
+        <!-- Konten -->
+        <div class="relative z-10 max-w-full mx-auto mt-[35px]">
+            <!-- Content Card -->
+            <div id="img-profile" class="bg-white p-8 md:p-12 shadow-lg">
+                <!-- Logo Bar -->
+                <div class="flex flex-wrap justify-center items-center gap-6">
+                    <img src="../assets/images/Aset Logo/LOGO PKM UEU-01.png" alt="PKM Center" class="h-12 md:h-24 animate-popup">
+                    <img src="../assets/images/Aset Logo/Logo-UEU.png" alt="Esa Unggul" class="h-12 md:h-24 animate-popup">
+                    <img src="../assets/images/Aset Logo/Logo-UEU ban pt.png" alt="Esa Unggul" class="h-12 md:h-24 animate-popup">
+                </div>
+            </div>
+            <h2 id="text-profile" class="text-2xl md:text-5xl font-bold text-white text-center animate-fadeInUp mt-8 mb-[-20px]" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">
+                Profil Organisasi <br> Program Kreativitas Mahasiswa <br> Universitas Esa Unggul
+            </h2>
+        </div>
+    </section>
+
+    <!-- Program Kreativitas Mahasiswa Section -->
+    <section id="program-kreativitas" class="py-8 bg-white">
+        <div id="content-program-kreativitas" class="max-w-7xl mx-auto px-4 animate-fadeInUp ">
+            <h2 class="text-3xl lg:text-4xl font-bold text-[#0556AF] text-center mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Program Kreativitas Mahasiswa</h2>
+            <p class="text-lg md:text-xl text-[#0556AF] font-medium text-justify mb-8">
+                Program Kreativitas Mahasiswa (PKM) adalah wadah yang disediakan untuk mahasiswa dalam mengembangkan kreativitas, inovasi, dan potensi ilmiah melalui kegiatan penelitian, pengabdian kepada masyarakat, kewirausahaan, teknologi, dan karya ilmiah. PKM bertujuan mendorong mahasiswa untuk menghasilkan ide orisinal, menyusun proposal secara sistematis, serta mengaplikasikan ilmu pengetahuan dalam situasi nyata. Melalui PKM, mahasiswa tidak hanya diasah kemampuan akademiknya, tetapi juga dilatih soft skills seperti kepemimpinan, kerjasama tim, dan kepekaan sosial, sehingga siap menjadi generasi muda yang inovatif, produktif, dan berdaya saing tinggi di tingkat nasional maupun internasional.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 text-[#0556AF] gap-8">
+                <div class="text-justify">
+                    <h3 class="text-3xl lg:text-4xl font-bold mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Visi</h3>
+                    <p class="text-lg md:text-xl font-medium">
+                        Mewujudkan Program Kreativitas Mahasiswa sebagai wadah pengembangan generasi muda yang inovatif, berintegritas, dan berkontribusi nyata dalam menciptakan solusi kreatif untuk kemajuan bangsa.
+                    </p>
+                </div>
+                <div class="text-justify">
+                    <h3 class="text-3xl lg:text-4xl font-bold mb-4" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Misi</h3>
+                    <ol class="list-decimal text-lg md:text-xl font-medium ml-6 space-y-2">
+                        <li>
+                            Menumbuhkan semangat kreativitas, inovasi, dan jiwa kepemimpinan mahasiswa melalui program yang terstruktur dan berkelanjutan.
+                        </li>
+                        <li>
+                            Meningkatkan kualitas proposal, karya ilmiah, dan produk mahasiswa agar mampu bersaing di tingkat nasional dan internasional.
+                        </li>
+                        <li>
+                            Membangun budaya kolaborasi antara mahasiswa, dosen, dan masyarakat dalam pengembangan solusi kreatif berbasis ilmu pengetahuan dan teknologi.
+                        </li>
+                        <li>
+                            Memberikan pendampingan, pelatihan, dan fasilitas yang mendorong mahasiswa aktif berpartisipasi dalam Program Kreativitas Mahasiswa.
+                        </li>
+                        <li>
+                            Mendorong lahirnya karya inovatif yang berdampak sosial dan relevan dengan kebutuhan masyarakat.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Struktur Organisasi Section -->
+    <section id="struktur-organisasi" class="py-8 bg-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center text-white mb-[50px]" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Struktur Organisasi</h2>
+            <img src="../assets/images/Struktur Organisasi/Bagan Struktur Organisasi.png" alt="struktur organisasi" class="w-full max-w-5xl mx-auto mb-8">
+        </div>
+    </section>
+
+    <!-- Tugas & Fungsi Tim Operator PKM Section -->
+    <section id="tugas-pkm" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Tugas & Peran Tim Operator PKM Universitas Esa Unggul</h2>
+            <div class="text-[#0556AF]">
+                <div class="text-justify">
+                    <p class="text-lg md:text-xl font-medium">
+                        Tim Operator PKM memiliki tugas utama dalam mengelola, memfasilitasi, dan memastikan seluruh kegiatan Program Kreativitas Mahasiswa (PKM) di Universitas Esa Unggul berjalan dengan baik, sesuai dengan ketentuan dan standar yang berlaku.
+                        Adapun peran Tim Operator PKM meliputi:
+                    </p>
+                    <p class="text-lg md:text-xl font-bold">
+                        Administrasi & Pendaftaran
+                    </p>
+                    <ul class="list-disc text-md md:text-lg font-medium ml-6 space-y-2">
+                        <li>
+                            Mengelola proses pendaftaran tim PKM secara online.
+                        </li>
+                        <li>
+                            Memverifikasi kelengkapan administrasi proposal PKM.
+                        </li>
+                        <li>
+                            Melakukan rekapitulasi data peserta dan proposal.
+                        </li>
+                    </ul>
+                    <p class="text-lg md:text-xl font-bold">
+                        Koordinasi & Bimbingan
+                    </p>
+                    <ul class="list-disc text-md md:text-lg font-medium ml-6 space-y-2">
+                        <li>
+                            Menjadi penghubung antara mahasiswa peserta PKM dengan dosen pembimbing.
+                        </li>
+                        <li>
+                            Memantau progres tim PKM dalam penyusunan proposal maupun pelaksanaan kegiatan.
+                        </li>
+                    </ul>
+                    <p class="text-lg md:text-xl font-bold">
+                        Sosialisasi & Pelatihan
+                    </p>
+                    <ul class="list-disc text-md md:text-lg font-medium ml-6 space-y-2">
+                        <li>
+                            Menyelenggarakan kegiatan sosialisasi PKM kepada mahasiswa.
+                        </li>
+                        <li>
+                            Mengadakan pelatihan penulisan proposal, workshop, dan simulasi presentasi.
+                        </li>
+                    </ul>
+                    <p class="text-lg md:text-xl font-bold">
+                        Teknologi & Sistem Informasi
+                    </p>
+                    <ul class="list-disc text-md md:text-lg font-medium ml-6 space-y-2">
+                        <li>
+                            Mengelola dan memelihara sistem informasi PKM, termasuk website dan platform pendaftaran online.
+                        </li>
+                        <li>
+                            Menyediakan informasi terkini terkait PKM melalui media digital.
+                        </li>
+                    </ul>
+                    <p class="text-lg md:text-xl font-bold">
+                        Publikasi & Dokumentasi
+                    </p>
+                    <ul class="list-disc text-md md:text-lg font-medium ml-6 space-y-2">
+                        <li>
+                            Mendokumentasikan seluruh kegiatan PKM baik dalam bentuk foto, video, maupun laporan.
+                        </li>
+                        <li>
+                            Mempublikasikan informasi, prestasi, dan kegiatan PKM melalui website, media sosial, dan kanal resmi universitas.
+                        </li>
+                    </ul>
+                    <p class="text-lg md:text-xl font-bold">
+                        Evaluasi & Pelaporan
+                    </p>
+                    <ul class="list-disc text-md md:text-lg font-medium ml-6 space-y-2">
+                        <li>
+                            Menyusun laporan kegiatan PKM secara berkala.
+                        </li>
+                        <li>
+                            Melakukan evaluasi pelaksanaan PKM untuk meningkatkan kualitas kegiatan di masa mendatang.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Tim Operator PKM Section -->
+    <section id="kontak-operator" class="py-8 bg-white text-[#0556AF]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-8" style="text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);">Layanan Informasi Tim Operator PKM</h2>
+
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left rtl:text-right text-white border-collapse border border-white">
+                    <thead class="text-xs md:text-lg text-center uppercase bg-[#123C7A]">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 border border-gray-300">
+                                Penanggung Jawab
+                            </th>
+                            <th scope="col" class="px-6 py-3 border border-gray-300 whitespace-nowrap">
+                                Nama
+                            </th>
+                            <th scope="col" class="px-6 py-3 border border-gray-300">
+                                Kontak
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-xs md:text-lg">
+                        <tr class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-3 border border-gray-300 font-medium">
+                                Ketua Tim Operator
+                            </th>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                Erik Wijaya
+                            </td>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                <a href="https://wa.me/+6283890514361" target="_blank" class="hover:underline">083890514361</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-3 border border-gray-300 font-medium">
+                                Penanggung Jawab PKM-PM
+                            </th>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                Adila
+                            </td>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                <a href="https://wa.me/+6283890514361" target="_blank" class="hover:underline">081290366464</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-3 border border-gray-300 font-medium">
+                                Penanggung Jawab PKM-AI
+                            </th>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                Firmansyah Katili
+                            </td>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                <a href="https://wa.me/+6283890514361" target="_blank" class="hover:underline">081354600155</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-3 border border-gray-300 font-medium">
+                                Penanggung Jawab PKM-AI
+                            </th>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                Azka Aulia
+                            </td>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                <a href="https://wa.me/+6283890514361" target="_blank" class="hover:underline">081210249010</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-3 border border-gray-300 font-medium">
+                                Penanggung Jawab PKM-KC & KI
+                            </th>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                Aditya
+                            </td>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                <a href="https://wa.me/+6283890514361" target="_blank" class="hover:underline">085891089128</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-3 border border-gray-300 font-medium">
+                                Penanggung Jawab PKM-GFT
+                            </th>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                Muhammad Faris
+                            </td>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                <a href="https://wa.me/+6283890514361" target="_blank" class="hover:underline">082150585807</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-3 border border-gray-300 font-medium">
+                                Penanggung Jawab PKM-PI
+                            </th>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                Rosita
+                            </td>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                <a href="https://wa.me/+6283890514361" target="_blank" class="hover:underline">085692539070</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-3 border border-gray-300 font-medium">
+                                Penanggung Jawab PKM-RE
+                            </th>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                Nayla
+                            </td>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                <a href="https://wa.me/+6283890514361" target="_blank" class="hover:underline">082194897875</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-3 border border-gray-300 font-medium">
+                                Penanggung Jawab PKM-VGK
+                            </th>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                Nurliana
+                            </td>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                <a href="https://wa.me/+6283890514361" target="_blank" class="hover:underline">085890559984</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-3 border border-gray-300 font-medium">
+                                Penanggung Jawab PKM-K
+                            </th>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                Nurruzzahroh
+                            </td>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                <a href="https://wa.me/+6283890514361" target="_blank" class="hover:underline">085779240641</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-[#0556AF]">
+                            <th scope="row" class="px-6 py-3 border border-gray-300 font-medium">
+                                Penanggung Jawab PKM-RSH
+                            </th>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                Zikry
+                            </td>
+                            <td class="px-6 py-3 border border-gray-300 whitespace-nowrap font-medium">
+                                <a href="https://wa.me/+6283890514361" target="_blank" class="hover:underline">085157496288</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0556AF] text-white py-10">
+        <div class="max-w-7xl mx-auto px-4">
+
+            <!-- Judul Tengah -->
+            <div class="text-center mb-8">
+                <h2 class="font-bold text-2xl md:text-3xl uppercase">
+                    PKM CENTER UNIVERSITAS ESA UNGGUL
+                </h2>
+            </div>
+
+            <!-- Konten Utama -->
+            <div class="grid md:grid-cols-2 gap-6 text-md">
+                <!-- Kolom Kiri: Alamat dan Jam -->
+                <div>
+                    <p class="text-xl font-semibold mb-2">Alamat kampus:</p>
+                    <a class="text-lg" href="https://maps.app.goo.gl/WMQ67AVfUrhdaTDt7" target="_blank">
+                        Jl. Arjuna Utara No.9, Duri Kepa, Kec. Kb. Jeruk, Kota<br>
+                        Jakarta Barat, Daerah Khusus Ibukota Jakarta 11510
+                    </a>
+                    <p class="text-xl mt-4">
+                        <span class="font-semibold">Jam layanan:</span><br>
+                        <span class="text-lg">Senin – Jumat, 10.00 – 17.00 WIB</span>
+                    </p>
+                </div>
+
+                <!-- Kolom Kanan: Kontak -->
+                <div class="text-md md:text-right">
+                    <p class="text-xl font-semibold">Email:</p>
+                    <a class="text-lg" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">
+                        operatorpkmueu@esaunggul.ac.id
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Instagram:</p>
+                    <a class="text-lg" href="https://instagram.com/pkm_center_ueu" target="_blank">
+                        @pkm_center_ueu
+                    </a>
+
+                    <p class="text-xl mt-4 font-semibold">Grup Whatsapp PKM UEU:</p>
+                    <a class="text-lg" href="https://chat.whatsapp.com/GIfqmjmHu4hA29R6NwnM54?mode=ac_t" target="_blank">Grup Whatsapp PKM UEU</a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-10 text-center text-lg text-white">
+                <span>&copy; 2025. All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk Navbar Mobile -->
+    <script>
+        document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+
+</html>

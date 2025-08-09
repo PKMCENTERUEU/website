@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_4" data-name="Layer 4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #21409a;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 36px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="File" class="cls-1" d="M553.77,13H230.72c-62.25,0-112.72,50.47-112.72,112.72v828.57c0,62.25,50.47,112.72,112.72,112.72h618.57c62.25,0,112.72-50.47,112.72-112.72V373.68c0-33.32-14.74-64.93-40.26-86.35L626.22,39.37c-20.3-17.03-45.95-26.37-72.45-26.37Z"/>
+  <g id="ARROW">
+    <path class="cls-2" d="M557.26,343.94l79.79,138.2c7.67,13.29-1.92,29.9-17.26,29.9h-159.57c-15.35,0-24.94-16.61-17.26-29.9l79.79-138.2c7.67-13.29,26.85-13.29,34.53,0Z"/>
+    <line class="cls-3" x1="433.5" y1="724" x2="646.5" y2="724"/>
+    <line class="cls-3" x1="540" y1="433.5" x2="540" y2="646.5"/>
+  </g>
+</svg>
